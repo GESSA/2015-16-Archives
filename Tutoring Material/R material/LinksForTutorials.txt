@@ -1,0 +1,23 @@
+Tutorials:
+1. swirl - R in R by coursera
+2. R Programming by John Hopkins: https://www.coursera.org/course/rprog
+3. getting and cleaning data: https://www.coursera.org/course/getdata
+4. R by examples : http://www.mayin.org/ajayshah/KB/R/
+5. R for economists : http://www.mayin.org/ajayshah/KB/R/documents/R_for_economists.html
+6. Things to be careful in R :http://www.mayin.org/ajayshah/KB/R/documents/careful.html
+7. Short tutorial by examples in R : http://www.mayin.org/ajayshah/KB/R/tutorial.R
+8. R with images : http://ananelson.com/blog/2009/09/introducing-roux/tutorial.R-with-images.html
+9. Style guidelines from google : http://google-styleguide.googlecode.com/svn/trunk/Rguide.xml
+10. Learn R quickly : http://www.statmethods.net/index.html
+11. https://learnr.wordpress.com/
+12. RbootCamp : http://jaredknowles.com/r-bootcamp/
+
+Good read:
+https://www.quora.com/What-interesting-companies-open-source-projects-are-using-R-in-2013
+http://using-r-project.blogspot.com/
+Zhao_R_and_data_mining
+
+Explore:
+http://shiny.rstudio.com/gallery/
+create ui.r and server.r
+

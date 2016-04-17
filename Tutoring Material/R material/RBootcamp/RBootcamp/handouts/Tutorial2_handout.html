@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title>Overview</title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+</style>
+
+<!-- Styles for R syntax highlighter -->
+<style type="text/css">
+   pre .operator,
+   pre .paren {
+     color: rgb(104, 118, 135)
+   }
+
+   pre .literal {
+     color: rgb(88, 72, 246)
+   }
+
+   pre .number {
+     color: rgb(0, 0, 205);
+   }
+
+   pre .comment {
+     color: rgb(76, 136, 107);
+   }
+
+   pre .keyword {
+     color: rgb(0, 0, 255);
+   }
+
+   pre .identifier {
+     color: rgb(0, 0, 0);
+   }
+
+   pre .string {
+     color: rgb(3, 106, 7);
+   }
+</style>
+
+<!-- R syntax highlighter -->
+<script type="text/javascript">
+var hljs=new function(){function m(p){return p.replace(/&/gm,"&amp;").replace(/</gm,"&lt;")}function f(r,q,p){return RegExp(q,"m"+(r.cI?"i":"")+(p?"g":""))}function b(r){for(var p=0;p<r.childNodes.length;p++){var q=r.childNodes[p];if(q.nodeName=="CODE"){return q}if(!(q.nodeType==3&&q.nodeValue.match(/\s+/))){break}}}function h(t,s){var p="";for(var r=0;r<t.childNodes.length;r++){if(t.childNodes[r].nodeType==3){var q=t.childNodes[r].nodeValue;if(s){q=q.replace(/\n/g,"")}p+=q}else{if(t.childNodes[r].nodeName=="BR"){p+="\n"}else{p+=h(t.childNodes[r])}}}if(/MSIE [678]/.test(navigator.userAgent)){p=p.replace(/\r/g,"\n")}return p}function a(s){var r=s.className.split(/\s+/);r=r.concat(s.parentNode.className.split(/\s+/));for(var q=0;q<r.length;q++){var p=r[q].replace(/^language-/,"");if(e[p]){return p}}}function c(q){var p=[];(function(s,t){for(var r=0;r<s.childNodes.length;r++){if(s.childNodes[r].nodeType==3){t+=s.childNodes[r].nodeValue.length}else{if(s.childNodes[r].nodeName=="BR"){t+=1}else{if(s.childNodes[r].nodeType==1){p.push({event:"start",offset:t,node:s.childNodes[r]});t=arguments.callee(s.childNodes[r],t);p.push({event:"stop",offset:t,node:s.childNodes[r]})}}}}return t})(q,0);return p}function k(y,w,x){var q=0;var z="";var s=[];function u(){if(y.length&&w.length){if(y[0].offset!=w[0].offset){return(y[0].offset<w[0].offset)?y:w}else{return w[0].event=="start"?y:w}}else{return y.length?y:w}}function t(D){var A="<"+D.nodeName.toLowerCase();for(var B=0;B<D.attributes.length;B++){var C=D.attributes[B];A+=" "+C.nodeName.toLowerCase();if(C.value!==undefined&&C.value!==false&&C.value!==null){A+='="'+m(C.value)+'"'}}return A+">"}while(y.length||w.length){var v=u().splice(0,1)[0];z+=m(x.substr(q,v.offset-q));q=v.offset;if(v.event=="start"){z+=t(v.node);s.push(v.node)}else{if(v.event=="stop"){var p,r=s.length;do{r--;p=s[r];z+=("</"+p.nodeName.toLowerCase()+">")}while(p!=v.node);s.splice(r,1);while(r<s.length){z+=t(s[r]);r++}}}}return z+m(x.substr(q))}function j(){function q(x,y,v){if(x.compiled){return}var u;var s=[];if(x.k){x.lR=f(y,x.l||hljs.IR,true);for(var w in x.k){if(!x.k.hasOwnProperty(w)){continue}if(x.k[w] instanceof Object){u=x.k[w]}else{u=x.k;w="keyword"}for(var r in u){if(!u.hasOwnProperty(r)){continue}x.k[r]=[w,u[r]];s.push(r)}}}if(!v){if(x.bWK){x.b="\\b("+s.join("|")+")\\s"}x.bR=f(y,x.b?x.b:"\\B|\\b");if(!x.e&&!x.eW){x.e="\\B|\\b"}if(x.e){x.eR=f(y,x.e)}}if(x.i){x.iR=f(y,x.i)}if(x.r===undefined){x.r=1}if(!x.c){x.c=[]}x.compiled=true;for(var t=0;t<x.c.length;t++){if(x.c[t]=="self"){x.c[t]=x}q(x.c[t],y,false)}if(x.starts){q(x.starts,y,false)}}for(var p in e){if(!e.hasOwnProperty(p)){continue}q(e[p].dM,e[p],true)}}function d(B,C){if(!j.called){j();j.called=true}function q(r,M){for(var L=0;L<M.c.length;L++){if((M.c[L].bR.exec(r)||[null])[0]==r){return M.c[L]}}}function v(L,r){if(D[L].e&&D[L].eR.test(r)){return 1}if(D[L].eW){var M=v(L-1,r);return M?M+1:0}return 0}function w(r,L){return L.i&&L.iR.test(r)}function K(N,O){var M=[];for(var L=0;L<N.c.length;L++){M.push(N.c[L].b)}var r=D.length-1;do{if(D[r].e){M.push(D[r].e)}r--}while(D[r+1].eW);if(N.i){M.push(N.i)}return f(O,M.join("|"),true)}function p(M,L){var N=D[D.length-1];if(!N.t){N.t=K(N,E)}N.t.lastIndex=L;var r=N.t.exec(M);return r?[M.substr(L,r.index-L),r[0],false]:[M.substr(L),"",true]}function z(N,r){var L=E.cI?r[0].toLowerCase():r[0];var M=N.k[L];if(M&&M instanceof Array){return M}return false}function F(L,P){L=m(L);if(!P.k){return L}var r="";var O=0;P.lR.lastIndex=0;var M=P.lR.exec(L);while(M){r+=L.substr(O,M.index-O);var N=z(P,M);if(N){x+=N[1];r+='<span class="'+N[0]+'">'+M[0]+"</span>"}else{r+=M[0]}O=P.lR.lastIndex;M=P.lR.exec(L)}return r+L.substr(O,L.length-O)}function J(L,M){if(M.sL&&e[M.sL]){var r=d(M.sL,L);x+=r.keyword_count;return r.value}else{return F(L,M)}}function I(M,r){var L=M.cN?'<span class="'+M.cN+'">':"";if(M.rB){y+=L;M.buffer=""}else{if(M.eB){y+=m(r)+L;M.buffer=""}else{y+=L;M.buffer=r}}D.push(M);A+=M.r}function G(N,M,Q){var R=D[D.length-1];if(Q){y+=J(R.buffer+N,R);return false}var P=q(M,R);if(P){y+=J(R.buffer+N,R);I(P,M);return P.rB}var L=v(D.length-1,M);if(L){var O=R.cN?"</span>":"";if(R.rE){y+=J(R.buffer+N,R)+O}else{if(R.eE){y+=J(R.buffer+N,R)+O+m(M)}else{y+=J(R.buffer+N+M,R)+O}}while(L>1){O=D[D.length-2].cN?"</span>":"";y+=O;L--;D.length--}var r=D[D.length-1];D.length--;D[D.length-1].buffer="";if(r.starts){I(r.starts,"")}return R.rE}if(w(M,R)){throw"Illegal"}}var E=e[B];var D=[E.dM];var A=0;var x=0;var y="";try{var s,u=0;E.dM.buffer="";do{s=p(C,u);var t=G(s[0],s[1],s[2]);u+=s[0].length;if(!t){u+=s[1].length}}while(!s[2]);if(D.length>1){throw"Illegal"}return{r:A,keyword_count:x,value:y}}catch(H){if(H=="Illegal"){return{r:0,keyword_count:0,value:m(C)}}else{throw H}}}function g(t){var p={keyword_count:0,r:0,value:m(t)};var r=p;for(var q in e){if(!e.hasOwnProperty(q)){continue}var s=d(q,t);s.language=q;if(s.keyword_count+s.r>r.keyword_count+r.r){r=s}if(s.keyword_count+s.r>p.keyword_count+p.r){r=p;p=s}}if(r.language){p.second_best=r}return p}function i(r,q,p){if(q){r=r.replace(/^((<[^>]+>|\t)+)/gm,function(t,w,v,u){return w.replace(/\t/g,q)})}if(p){r=r.replace(/\n/g,"<br>")}return r}function n(t,w,r){var x=h(t,r);var v=a(t);var y,s;if(v){y=d(v,x)}else{return}var q=c(t);if(q.length){s=document.createElement("pre");s.innerHTML=y.value;y.value=k(q,c(s),x)}y.value=i(y.value,w,r);var u=t.className;if(!u.match("(\\s|^)(language-)?"+v+"(\\s|$)")){u=u?(u+" "+v):v}if(/MSIE [678]/.test(navigator.userAgent)&&t.tagName=="CODE"&&t.parentNode.tagName=="PRE"){s=t.parentNode;var p=document.createElement("div");p.innerHTML="<pre><code>"+y.value+"</code></pre>";t=p.firstChild.firstChild;p.firstChild.cN=s.cN;s.parentNode.replaceChild(p.firstChild,s)}else{t.innerHTML=y.value}t.className=u;t.result={language:v,kw:y.keyword_count,re:y.r};if(y.second_best){t.second_best={language:y.second_best.language,kw:y.second_best.keyword_count,re:y.second_best.r}}}function o(){if(o.called){return}o.called=true;var r=document.getElementsByTagName("pre");for(var p=0;p<r.length;p++){var q=b(r[p]);if(q){n(q,hljs.tabReplace)}}}function l(){if(window.addEventListener){window.addEventListener("DOMContentLoaded",o,false);window.addEventListener("load",o,false)}else{if(window.attachEvent){window.attachEvent("onload",o)}else{window.onload=o}}}var e={};this.LANGUAGES=e;this.highlight=d;this.highlightAuto=g;this.fixMarkup=i;this.highlightBlock=n;this.initHighlighting=o;this.initHighlightingOnLoad=l;this.IR="[a-zA-Z][a-zA-Z0-9_]*";this.UIR="[a-zA-Z_][a-zA-Z0-9_]*";this.NR="\\b\\d+(\\.\\d+)?";this.CNR="\\b(0[xX][a-fA-F0-9]+|(\\d+(\\.\\d*)?|\\.\\d+)([eE][-+]?\\d+)?)";this.BNR="\\b(0b[01]+)";this.RSR="!|!=|!==|%|%=|&|&&|&=|\\*|\\*=|\\+|\\+=|,|\\.|-|-=|/|/=|:|;|<|<<|<<=|<=|=|==|===|>|>=|>>|>>=|>>>|>>>=|\\?|\\[|\\{|\\(|\\^|\\^=|\\||\\|=|\\|\\||~";this.ER="(?![\\s\\S])";this.BE={b:"\\\\.",r:0};this.ASM={cN:"string",b:"'",e:"'",i:"\\n",c:[this.BE],r:0};this.QSM={cN:"string",b:'"',e:'"',i:"\\n",c:[this.BE],r:0};this.CLCM={cN:"comment",b:"//",e:"$"};this.CBLCLM={cN:"comment",b:"/\\*",e:"\\*/"};this.HCM={cN:"comment",b:"#",e:"$"};this.NM={cN:"number",b:this.NR,r:0};this.CNM={cN:"number",b:this.CNR,r:0};this.BNM={cN:"number",b:this.BNR,r:0};this.inherit=function(r,s){var p={};for(var q in r){p[q]=r[q]}if(s){for(var q in s){p[q]=s[q]}}return p}}();hljs.LANGUAGES.cpp=function(){var a={keyword:{"false":1,"int":1,"float":1,"while":1,"private":1,"char":1,"catch":1,"export":1,virtual:1,operator:2,sizeof:2,dynamic_cast:2,typedef:2,const_cast:2,"const":1,struct:1,"for":1,static_cast:2,union:1,namespace:1,unsigned:1,"long":1,"throw":1,"volatile":2,"static":1,"protected":1,bool:1,template:1,mutable:1,"if":1,"public":1,friend:2,"do":1,"return":1,"goto":1,auto:1,"void":2,"enum":1,"else":1,"break":1,"new":1,extern:1,using:1,"true":1,"class":1,asm:1,"case":1,typeid:1,"short":1,reinterpret_cast:2,"default":1,"double":1,register:1,explicit:1,signed:1,typename:1,"try":1,"this":1,"switch":1,"continue":1,wchar_t:1,inline:1,"delete":1,alignof:1,char16_t:1,char32_t:1,constexpr:1,decltype:1,noexcept:1,nullptr:1,static_assert:1,thread_local:1,restrict:1,_Bool:1,complex:1},built_in:{std:1,string:1,cin:1,cout:1,cerr:1,clog:1,stringstream:1,istringstream:1,ostringstream:1,auto_ptr:1,deque:1,list:1,queue:1,stack:1,vector:1,map:1,set:1,bitset:1,multiset:1,multimap:1,unordered_set:1,unordered_map:1,unordered_multiset:1,unordered_multimap:1,array:1,shared_ptr:1}};return{dM:{k:a,i:"</",c:[hljs.CLCM,hljs.CBLCLM,hljs.QSM,{cN:"string",b:"'\\\\?.",e:"'",i:"."},{cN:"number",b:"\\b(\\d+(\\.\\d*)?|\\.\\d+)(u|U|l|L|ul|UL|f|F)"},hljs.CNM,{cN:"preprocessor",b:"#",e:"$"},{cN:"stl_container",b:"\\b(deque|list|queue|stack|vector|map|set|bitset|multiset|multimap|unordered_map|unordered_set|unordered_multiset|unordered_multimap|array)\\s*<",e:">",k:a,r:10,c:["self"]}]}}}();hljs.LANGUAGES.r={dM:{c:[hljs.HCM,{cN:"number",b:"\\b0[xX][0-9a-fA-F]+[Li]?\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\b\\d+(?:[eE][+\\-]?\\d*)?L\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\b\\d+\\.(?!\\d)(?:i\\b)?",e:hljs.IMMEDIATE_RE,r:1},{cN:"number",b:"\\b\\d+(?:\\.\\d*)?(?:[eE][+\\-]?\\d*)?i?\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\.\\d+(?:[eE][+\\-]?\\d*)?i?\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"keyword",b:"(?:tryCatch|library|setGeneric|setGroupGeneric)\\b",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\.\\.\\.",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\.\\.\\d+(?![\\w.])",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\b(?:function)",e:hljs.IMMEDIATE_RE,r:2},{cN:"keyword",b:"(?:if|in|break|next|repeat|else|for|return|switch|while|try|stop|warning|require|attach|detach|source|setMethod|setClass)\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"literal",b:"(?:NA|NA_integer_|NA_real_|NA_character_|NA_complex_)\\b",e:hljs.IMMEDIATE_RE,r:10},{cN:"literal",b:"(?:NULL|TRUE|FALSE|T|F|Inf|NaN)\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"identifier",b:"[a-zA-Z.][a-zA-Z0-9._]*\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"operator",b:"<\\-(?!\\s*\\d)",e:hljs.IMMEDIATE_RE,r:2},{cN:"operator",b:"\\->|<\\-",e:hljs.IMMEDIATE_RE,r:1},{cN:"operator",b:"%%|~",e:hljs.IMMEDIATE_RE},{cN:"operator",b:">=|<=|==|!=|\\|\\||&&|=|\\+|\\-|\\*|/|\\^|>|<|!|&|\\||\\$|:",e:hljs.IMMEDIATE_RE,r:0},{cN:"operator",b:"%",e:"%",i:"\\n",r:1},{cN:"identifier",b:"`",e:"`",r:0},{cN:"string",b:'"',e:'"',c:[hljs.BE],r:0},{cN:"string",b:"'",e:"'",c:[hljs.BE],r:0},{cN:"paren",b:"[[({\\])}]",e:hljs.IMMEDIATE_RE,r:0}]}};
+hljs.initHighlightingOnLoad();
+</script>
+
+<!-- MathJax scripts -->
+<script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+</head>
+
+<body>
+<p>% Tutorial 2: Getting Data In
+% DPI R Bootcamp
+% Jared Knowles</p>
+
+<h1>Overview</h1>
+
+<ul>
+<li>Loading Packages</li>
+<li>Understand data types</li>
+<li>Load a CSV file</li>
+<li>Organize an analysis project</li>
+<li>Query a database</li>
+</ul>
+
+<p align="center"><img src="data:image/png;base64,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" height="81" width="138"></p>
+
+<h1>A quick note on R <code>packages</code></h1>
+
+<ul>
+<li><code>packages</code> are essentially free and open source add-ons for R</li>
+<li>There are over 3,000 packages available for R that add all sorts of functionality</li>
+<li>A few examples (from the mundane to the crazy)
+
+<ul>
+<li>Additional graphics capabilities from the <code>ggplot2</code> package</li>
+<li>Advanced regression techniques from the <code>lme4</code> package for mixed effects models</li>
+<li>3d graphics from the <code>scatterplot3d</code> package (also <code>webGL</code>)</li>
+<li>GIS analytics and mapping functionality with <code>sp</code></li>
+<li>Text mining analytics with <code>tm</code></li>
+<li>Predictive modeling frameworks with <code>caret</code></li>
+<li>Interfaces to other programming languages like Python, Java, and C and C++</li>
+<li>A web server: <code>Rserve</code></li>
+<li>And Minesweeper from the <code>fun</code> package</li>
+</ul></li>
+</ul>
+
+<h1>I can haz packages?</h1>
+
+<pre><code class="r"># You can find and install packages within R
+install.packages(&quot;foo&quot;)  # Name must be in quotes
+install.packages(c(&quot;foo&quot;, &quot;foo1&quot;, &quot;foo2&quot;))
+# Packages get updated FREQUENTLY
+update.packages()  # Gonna update them all
+</code></pre>
+
+<ul>
+<li>Note, on Windows Vista and later R either needs to be run as an administrator to install packages, or you have to fiddle with where the packages are installed</li>
+<li>Packages are stored in something called the <strong>library</strong> which is just a collection of packages
+
+<ul>
+<li>Sometimes folks call packages <strong>libraries</strong></li>
+</ul></li>
+<li>Loading a package couldn&#39;t be easier <code>library(ggplot2)</code> and you&#39;re done!</li>
+</ul>
+
+<h1>Finding Packages</h1>
+
+<ul>
+<li>Official packages are found on CRAN (Comprehensive R A Network)</li>
+<li>Unofficial packages or <strong>beta</strong> versions of packages are found on <a href="http://r-forge.r-project.org/">RForge</a> and <a href="http://www.github.com">GitHub</a></li>
+<li>To find out what packages are out there that do a specific function, try:
+
+<ul>
+<li>Google &ldquo;doing X in R package&rdquo;</li>
+<li>Look at CRAN taskviews</li>
+</ul></li>
+<li><a href="http://cran.r-project.org/web/views/">CRAN taskviews</a> are great to find a bunch of packages related to a problem you are trying to solve</li>
+</ul>
+
+<h1>Some Must Have Packages</h1>
+
+<p><code>plyr</code> <code>ggplot2</code> <code>lme4</code> <code>sp</code> <code>knitr</code></p>
+
+<ul>
+<li>These packages come with data, code, functions, and utilities that you can access</li>
+<li>If you want to learn about them, check them out in the RStudio Packages tab, which gives an index of their help files and handy links to their help documentation</li>
+<li>Some packages also have <code>vignettes</code> which walk you through use cases for the package</li>
+<li><code>caret</code> has a great example</li>
+</ul>
+
+<h1>Data Management</h1>
+
+<ul>
+<li>Data management in R used to be managed by the <code>ls()</code> command </li>
+<li>Go ahead, type it. </li>
+<li>Now you can look at the Workspace tab in RStudio and have a complete list of the data in R&#39;s memory that is accessible to you</li>
+<li>All data objects have names</li>
+<li>All object names are unique (not strictly so, but let&#39;s not violate this)</li>
+<li>To reference items within an object type we need to give it an address like in <code>mydata$thingIwant</code> or <code>mydata@thingIwant</code></li>
+<li>The <code>$</code> and <code>@</code> distinction depends on whether this is an S3 or an S4 class</li>
+<li>R will warn you if you do it wrong, so just remember when <code>$</code> doesn&#39;t work, use <code>@</code></li>
+</ul>
+
+<h1>The Working Directory</h1>
+
+<ul>
+<li>The working directory, lovingly denoted by <code>wd</code> is both your friend and enemy</li>
+<li>R needs to know where it is in your file system to be able to access data and write output</li>
+<li>Check this by typing <code>getwd()</code></li>
+<li>R work is best done in a selfcontained directory, like <code>C:/Users/My Documents/My Project/</code> which is then set as the working directory</li>
+<li>How to set the working directory? The <code>setwd()</code> command: <code>setwd(&quot;PATH/TO/MY PROJECT/&quot;)</code></li>
+</ul>
+
+<h1>Preliminaries</h1>
+
+<ul>
+<li>Get and set the working directory</li>
+<li>Understand file system paths</li>
+<li>Understand relative and full paths</li>
+<li>Find out where things are</li>
+<li>To start, we&#39;ll download the Bootcamp files and open up &ldquo;Tutorial 2.R&rdquo;</li>
+<li>We&#39;ll notice that in the Bootcamp folder we have a number of subfolders for things like <code>data</code> and <code>handouts</code></li>
+<li>When you do an R project, it really helps to put it into a self-contained folder so you can reference everything you need easily within the file system</li>
+</ul>
+
+<h1>RStudio Shortcuts</h1>
+
+<ul>
+<li>RStudio makes this so much easier!</li>
+<li>RStudio can set the working directory to the <strong>Files</strong> pane in the bottom right, or to the <strong>Source</strong> file in the top left</li>
+<li>The source file is the most likely path, but sometimes we need to access data in a separate folder and store results in another</li>
+<li>So RStudio shortcuts can&#39;t help there</li>
+</ul>
+
+<h1>RStudio Projects</h1>
+
+<ul>
+<li>A great feature of RStudio is that it allows us to create a <strong>project</strong> which allows us to quickly jump from folder to folder, store data, and keep open tasks and scripts</li>
+<li>If you have multiple R tasks at once (how lucky!) you have to use projects</li>
+<li>Let&#39;s walkthrough creating a Project in RStudio and understand it a little bit</li>
+<li><strong>DEMO</strong></li>
+</ul>
+
+<h1>Manipulating Project Paths</h1>
+
+<ul>
+<li>Paths are strings that tell R where to find files on your computer</li>
+<li>R uses both full and relative paths</li>
+<li>When we want to call files from different directories or write to different directories, we can use relative paths within the project</li>
+<li>Relative paths look like <code>/data</code> or <code>~data</code> which means, look for the <code>data</code> folder in our current working directory</li>
+<li>Full paths work differently, they specify the exact location on the hard drive of the machine like <code>C:/Path/To/My/Data</code> or <code>usr/home/jaredrocks</code></li>
+</ul>
+
+<h1>When to use a full path</h1>
+
+<ul>
+<li>Never</li>
+<li>It breaks the ability to pass a project directory to a coauthor/collaborator</li>
+<li>But when you must&hellip;</li>
+<li>When you have something on a whole different drive or network store</li>
+<li>When you don&#39;t think you&#39;ll migrate your code to a new operating system or a different machine/network environment</li>
+<li>When the project is simple</li>
+</ul>
+
+<h1>Ground Rules</h1>
+
+<ul>
+<li>Get used to plain text input files
+
+<ul>
+<li>R can handle other formats, but your error rate increases as does the tweaking necessary</li>
+</ul></li>
+<li>R has a limited set of special characters (symbols) you cannot use in your data input to be translated correctly </li>
+<li>These symbols are reserved and will be interpreted in strange ways if you include them in your plain text data file</li>
+<li>Most of them are fairly obvious operators, see <a href="http://www.stat.auckland.ac.nz/%7Epaul/ItDT/HTML/node75.html">Paul Murrell&#39;s excellent summary</a></li>
+</ul>
+
+<h1>Missing Data Symbols</h1>
+
+<ul>
+<li>Missing data has the symbols <code>NA</code> or <code>NaN</code> or <code>NULL</code> depending on the context.</li>
+<li>Consider:</li>
+</ul>
+
+<pre><code class="r">a &lt;- c(1, 2, 3)  # a is a vector with three elements
+# Ask R for element 4
+print(a[4])
+</code></pre>
+
+<pre><code>## [1] NA
+</code></pre>
+
+<ul>
+<li>But what is the difference between <code>NA</code> and <code>NULL</code>?</li>
+</ul>
+
+<pre><code class="r">a &lt;- c(a, NULL)  # Append NULL onto a
+print(a)
+</code></pre>
+
+<pre><code>## [1] 1 2 3
+</code></pre>
+
+<pre><code class="r"># Notice no change
+a &lt;- c(a, NA)
+print(a)
+</code></pre>
+
+<pre><code>## [1]  1  2  3 NA
+</code></pre>
+
+<ul>
+<li><code>NA</code> can hold a place, <code>NULL</code> cannot</li>
+</ul>
+
+<h1>What the heck is Not a Number?</h1>
+
+<ul>
+<li><code>NaN</code> is even more special, and only holds things like imaginary numbers</li>
+<li><code>NaN</code> stands for &ldquo;Not a Number&rdquo;</li>
+</ul>
+
+<pre><code class="r">b &lt;- 1
+b &lt;- sqrt(-b)
+</code></pre>
+
+<pre><code>## Warning: NaNs produced
+</code></pre>
+
+<pre><code class="r">print(b)
+</code></pre>
+
+<pre><code>## [1] NaN
+</code></pre>
+
+<pre><code class="r">pi/0
+</code></pre>
+
+<pre><code>## [1] Inf
+</code></pre>
+
+<ul>
+<li><strong>Inf</strong> is a special case as well representing an infinite value</li>
+<li>Just for fun <code>sin(Inf)</code> = <code>NaN</code></li>
+</ul>
+
+<h1>Beginning Analysis</h1>
+
+<ul>
+<li>Now let&#39;s set up our analysis project</li>
+<li>It is best to keep projects discrete in directories</li>
+<li>Create a few subdirectories
+
+<ul>
+<li>Data</li>
+<li>Functions / R src</li>
+<li>Figures / Plots</li>
+<li>Cleaned Data</li>
+</ul></li>
+<li>We&#39;ve already done this in the Bootcamp folder itself!</li>
+<li>See the <code>ProjectTemplate</code> package for a more detailed philosophy about organizing projects</li>
+</ul>
+
+<h1>Organization of a project is key</h1>
+
+<ul>
+<li>Separate data from scripts</li>
+<li>Separate automatic scripts from interactive scripts</li>
+<li>Put figures apart from both of these</li>
+<li><strong>Always keep your raw data</strong></li>
+</ul>
+
+<h1>Create our Project</h1>
+
+<ul>
+<li>Open the &ldquo;bootcamp&rdquo; folder on your machine</li>
+<li>Underneath this make a a &ldquo;figure&rdquo; folder to go with the &ldquo;data&rdquo; folder</li>
+<li>Create an R script in the &ldquo;bootcamp&rdquo; folder called &ldquo;myscriptname.R&rdquo;</li>
+<li>Put all the data files in the &ldquo;data&rdquo; folder</li>
+</ul>
+
+<h1>Read in Data</h1>
+
+<ul>
+<li>Reading in data is one of the trickiest issues for R</li>
+<li>This is because R is incredibly flexible and can handle data in almost any form including <code>.csv</code> <code>.dta</code> <code>.sas</code> <code>.spss</code> <code>.dat</code> and even <code>.xls</code> and <code>.xlsx</code> with some care</li>
+<li>So we have to carefully specify the data types to R so it can understand what form the data needs to take</li>
+<li>Compared to C this is great!</li>
+</ul>
+
+<h1>CSV is Our Friend</h1>
+
+<ul>
+<li>The easiest data type is .csv though Excel files can be read as well </li>
+</ul>
+
+<pre><code class="r"># Set working directory to the tutorial directory In RStudio can do this
+# in &#39;Tools&#39; tab
+setwd(&quot;~/GitHub/r_tutorial_ed&quot;)
+# Load some data
+df &lt;- read.csv(&quot;data/smalldata.csv&quot;)
+# Note if we don&#39;t assign data to &#39;df&#39; R just prints contents of table
+</code></pre>
+
+<h1>Let&#39;s Check What We Got</h1>
+
+<pre><code>## &#39;data.frame&#39;:    2700 obs. of  6 variables:
+##  $ schoolavg: int  1 1 1 1 1 1 1 1 1 1 ...
+##  $ schoollow: int  0 0 0 0 0 0 0 0 0 0 ...
+##  $ readSS   : num  357 264 370 347 373 ...
+##  $ mathSS   : num  387 303 365 344 441 ...
+##  $ proflvl  : Factor w/ 4 levels &quot;advanced&quot;,&quot;basic&quot;,..: 2 3 2 2 2 4 4 4 3 2 ...
+##  $ race     : Factor w/ 5 levels &quot;A&quot;,&quot;B&quot;,&quot;H&quot;,&quot;I&quot;,..: 2 2 2 2 2 2 2 2 2 2 ...
+</code></pre>
+
+<h1>Always Check Your Data</h1>
+
+<ul>
+<li>A few great commands:</li>
+</ul>
+
+<pre><code class="r">dim(df)
+</code></pre>
+
+<pre><code>## [1] 2700   32
+</code></pre>
+
+<ul>
+<li><code>summary</code></li>
+</ul>
+
+<pre><code class="r">summary(df[, 1:5])
+</code></pre>
+
+<pre><code>##        X               school         stuid            grade     
+##  Min.   :     44   Min.   :   1   Min.   :   205   Min.   :3.00  
+##  1st Qu.: 108677   1st Qu.: 195   1st Qu.: 44205   1st Qu.:4.00  
+##  Median : 458596   Median : 436   Median : 88205   Median :5.00  
+##  Mean   : 557918   Mean   : 460   Mean   : 99229   Mean   :5.44  
+##  3rd Qu.: 972291   3rd Qu.: 717   3rd Qu.:132205   3rd Qu.:7.00  
+##  Max.   :1499992   Max.   :1000   Max.   :324953   Max.   :8.00  
+##      schid      
+##  Min.   :  6.0  
+##  1st Qu.: 15.0  
+##  Median : 55.5  
+##  Mean   : 52.0  
+##  3rd Qu.: 75.0  
+##  Max.   :105.0
+</code></pre>
+
+<h1>Checking your data II</h1>
+
+<ul>
+<li><code>names</code></li>
+</ul>
+
+<pre><code class="r">names(df)
+</code></pre>
+
+<pre><code>##  [1] &quot;X&quot;           &quot;school&quot;      &quot;stuid&quot;       &quot;grade&quot;       &quot;schid&quot;      
+##  [6] &quot;dist&quot;        &quot;white&quot;       &quot;black&quot;       &quot;hisp&quot;        &quot;indian&quot;     
+## [11] &quot;asian&quot;       &quot;econ&quot;        &quot;female&quot;      &quot;ell&quot;         &quot;disab&quot;      
+## [16] &quot;sch_fay&quot;     &quot;dist_fay&quot;    &quot;luck&quot;        &quot;ability&quot;     &quot;measerr&quot;    
+## [21] &quot;teachq&quot;      &quot;year&quot;        &quot;attday&quot;      &quot;schoolscore&quot; &quot;district&quot;   
+## [26] &quot;schoolhigh&quot;  &quot;schoolavg&quot;   &quot;schoollow&quot;   &quot;readSS&quot;      &quot;mathSS&quot;     
+## [31] &quot;proflvl&quot;     &quot;race&quot;
+</code></pre>
+
+<ul>
+<li><code>attributes</code> and <code>class</code></li>
+</ul>
+
+<pre><code class="r">names(attributes(df))
+</code></pre>
+
+<pre><code>## [1] &quot;names&quot;     &quot;row.names&quot; &quot;class&quot;
+</code></pre>
+
+<pre><code class="r">class(df)
+</code></pre>
+
+<pre><code>## [1] &quot;data.frame&quot;
+</code></pre>
+
+<ul>
+<li><code>str</code> which lists all data elements in an object and their type<br/></li>
+</ul>
+
+<h1>Data Warehouses, Oracle, SQL and RODBC</h1>
+
+<ul>
+<li>Do you have data in a warehouse? 
+
+<ul>
+<li>RODBC can help</li>
+</ul></li>
+<li>You can query the data directly and bring it into R, saving time and hassle</li>
+<li>Makes your work reproducible, always start with a clean slate of data</li>
+<li>At DPI this can allow us to pull data directly from LDS or other databases using SQL queries</li>
+</ul>
+
+<h1>An Example From DPI</h1>
+
+<ul>
+<li>The basics of the RODBC package are easy to understand</li>
+</ul>
+
+<pre><code class="r">library(RODBC)  # interface driver for R
+channel &lt;- odbcConnect(&quot;Mydatabase.location&quot;, uid = &quot;useR&quot;, pwd = &quot;secret&quot;)
+# establish connection we can do multiple connections in the same R
+# session
+# 
+# WARNING: credentials stored in plain text unless you do some magic
+table_list &lt;- sqltables(channel, schema = &quot;My_DB&quot;)
+# Get a list of tables in the connection
+colnames(sqlFetch(channel, &quot;My_DB.TABLE_NAME&quot;, max = 1))
+# get the column names of a table
+datapull &lt;- sqlQuery(channel, &quot;SELECT DATA1, DATA2, DATA3 FROM My_DB.TABLE_NAME&quot;)
+# execute some SQLquery, can paste any SQLquery as a string into this
+# space
+</code></pre>
+
+<h1>Missing Data</h1>
+
+<ul>
+<li>Let&#39;s add some missing data to our dataframe so we can see how missing data works</li>
+</ul>
+
+<pre><code class="r">random &lt;- sample(unique(df$stuid), 100)
+random2 &lt;- sample(unique(df$stuid), 120)
+messdf &lt;- df
+messdf$readSS[messdf$stuid %in% random] &lt;- NA
+messdf$mathSS[messdf$stuid %in% random2] &lt;- NA
+</code></pre>
+
+<ul>
+<li>What is this code doing?</li>
+<li>How can we find out?</li>
+<li>Don&#39;t try this at home!</li>
+</ul>
+
+<h1>Checking for Missing Data</h1>
+
+<ul>
+<li>The <code>summary</code> function helps identify missing data</li>
+</ul>
+
+<pre><code class="r">summary(messdf[, c(&quot;stuid&quot;, &quot;readSS&quot;, &quot;mathSS&quot;)])
+</code></pre>
+
+<pre><code>##      stuid            readSS        mathSS   
+##  Min.   :   205   Min.   :252   Min.   :210  
+##  1st Qu.: 44205   1st Qu.:431   1st Qu.:418  
+##  Median : 88205   Median :497   Median :480  
+##  Mean   : 99229   Mean   :497   Mean   :484  
+##  3rd Qu.:132205   3rd Qu.:564   3rd Qu.:543  
+##  Max.   :324953   Max.   :833   Max.   :828  
+##                   NA&#39;s   :223   NA&#39;s   :288
+</code></pre>
+
+<pre><code class="r">nrow(messdf[!complete.cases(messdf), ])  # number of rows with missing data
+</code></pre>
+
+<pre><code>## [1] 494
+</code></pre>
+
+<ul>
+<li>To get rid of missing data, we can copy our data with all missing cases dropped using the <code>na.omit</code> function</li>
+</ul>
+
+<pre><code class="r">cleandf &lt;- na.omit(messdf)
+nrow(cleandf)
+</code></pre>
+
+<pre><code>## [1] 2206
+</code></pre>
+
+<h1>Now we have the data</h1>
+
+<ul>
+<li>What next?</li>
+<li>We need to do some basic diagnostics on our data to understand the look and feel of it before we proceed</li>
+<li>Here are a few examples of scripts we could run to understand our data object</li>
+</ul>
+
+<pre><code class="r">dim(messdf)
+</code></pre>
+
+<pre><code>## [1] 2700   32
+</code></pre>
+
+<pre><code class="r">str(messdf[, 18:26])
+</code></pre>
+
+<pre><code>## &#39;data.frame&#39;:    2700 obs. of  9 variables:
+##  $ luck       : int  0 1 0 1 0 0 1 0 0 0 ...
+##  $ ability    : num  87.9 97.8 104.5 111.7 81.9 ...
+##  $ measerr    : num  11.13 6.82 -7.86 -17.57 52.98 ...
+##  $ teachq     : num  39.0902 0.0985 39.5389 24.1161 56.6806 ...
+##  $ year       : int  2000 2000 2000 2000 2000 2000 2000 2000 2000 2000 ...
+##  $ attday     : int  180 180 160 168 156 157 169 180 170 152 ...
+##  $ schoolscore: num  29.2 56 56 56 56 ...
+##  $ district   : int  3 3 3 3 3 3 3 3 3 3 ...
+##  $ schoolhigh : int  0 0 0 0 0 0 0 0 0 0 ...
+</code></pre>
+
+<h1>Looking at data structure</h1>
+
+<pre><code class="r">names(messdf)
+</code></pre>
+
+<pre><code>##  [1] &quot;X&quot;           &quot;school&quot;      &quot;stuid&quot;       &quot;grade&quot;       &quot;schid&quot;      
+##  [6] &quot;dist&quot;        &quot;white&quot;       &quot;black&quot;       &quot;hisp&quot;        &quot;indian&quot;     
+## [11] &quot;asian&quot;       &quot;econ&quot;        &quot;female&quot;      &quot;ell&quot;         &quot;disab&quot;      
+## [16] &quot;sch_fay&quot;     &quot;dist_fay&quot;    &quot;luck&quot;        &quot;ability&quot;     &quot;measerr&quot;    
+## [21] &quot;teachq&quot;      &quot;year&quot;        &quot;attday&quot;      &quot;schoolscore&quot; &quot;district&quot;   
+## [26] &quot;schoolhigh&quot;  &quot;schoolavg&quot;   &quot;schoollow&quot;   &quot;readSS&quot;      &quot;mathSS&quot;     
+## [31] &quot;proflvl&quot;     &quot;race&quot;
+</code></pre>
+
+<ul>
+<li>It looks like we have a number of <code>id</code> variables, this is useful and it is good to check if these variables have multiple rows per id or not and we do this using <code>length</code> and <code>unique</code></li>
+</ul>
+
+<pre><code class="r">length(unique(messdf$stuid))
+</code></pre>
+
+<pre><code>## [1] 1200
+</code></pre>
+
+<pre><code class="r">length(unique(messdf$schid))
+</code></pre>
+
+<pre><code>## [1] 6
+</code></pre>
+
+<pre><code class="r">length(unique(messdf$dist))
+</code></pre>
+
+<pre><code>## [1] 3
+</code></pre>
+
+<h1>Checking for Coding</h1>
+
+<ul>
+<li>Data is coded using numeric or character representations of attributes - commonly things are coded using a 1 and 0 scheme or an A,B,C scheme</li>
+<li>With R we can check how our variables are coded very easily</li>
+</ul>
+
+<pre><code class="r">unique(messdf$grade)
+</code></pre>
+
+<pre><code>## [1] 3 4 5 6 7 8
+</code></pre>
+
+<pre><code class="r">unique(messdf$econ)
+</code></pre>
+
+<pre><code>## [1] 0 1
+</code></pre>
+
+<pre><code class="r">unique(messdf$race)
+</code></pre>
+
+<pre><code>## [1] B H I W A
+## Levels: A B H I W
+</code></pre>
+
+<pre><code class="r">unique(messdf$disab)
+</code></pre>
+
+<pre><code>## [1] 0 1
+</code></pre>
+
+<ul>
+<li>Which are factors?</li>
+<li>Which are not?</li>
+</ul>
+
+<h1>Next Steps</h1>
+
+<ul>
+<li>In the next section we will learn to aggregate, explore, reshape, and recode data</li>
+<li>Questions?</li>
+</ul>
+
+<h1>Exercises</h1>
+
+<ol>
+<li><p>Read in the CSV file from the T drive or the project folder</p></li>
+<li><p>Read in the R data file from the T drive or the project folder</p></li>
+<li><p>Read in the sample datafile. Find the <code>readSS</code> (reading scale score) for student 205 in grade 4. </p></li>
+<li><p>Create a list of two attributes for each district in the <code>df</code> datafile. </p></li>
+<li><p>Think about your own data warehouse environment. Could R interface with it? How?</p></li>
+</ol>
+
+<h1>Other References</h1>
+
+<ul>
+<li><a href="http://www.ats.ucla.edu/stat/r/pages/raw_data.htm">UCLA Academic Technology Services: Reading in Raw Data</a></li>
+<li><a href="http://www.statmethods.net/input/importingdata.html">Quick-R: Data Import</a></li>
+<li><a href="http://www.twotorials.com/">Video Tutorials</a></li>
+<li><a href="http://cran.r-project.org/doc/manuals/R-data.html">Long CRAN Manual on Data Import/Export</a></li>
+</ul>
+
+<h1>Session Info</h1>
+
+<p>It is good to include the session info, e.g. this document is produced with <strong>knitr</strong> version 0.9.6. Here is my session info:</p>
+
+<pre><code class="r">print(sessionInfo(), locale = FALSE)
+</code></pre>
+
+<pre><code>## R version 2.15.2 (2012-10-26)
+## Platform: x86_64-w64-mingw32/x64 (64-bit)
+## 
+## attached base packages:
+## [1] splines   grid      stats     graphics  grDevices utils     datasets 
+## [8] methods   base     
+## 
+## other attached packages:
+##  [1] R2SWF_0.4        snow_0.3-10      gbm_1.6-3.2      reshape_0.8.4   
+##  [5] caret_5.15-048   foreach_1.4.0    cluster_1.14.3   reshape2_1.2.2  
+##  [9] lme4_0.999999-0  Matrix_1.0-10    lattice_0.20-10  xtable_1.7-0    
+## [13] vcd_1.2-13       colorspace_1.2-0 MASS_7.3-22      Hmisc_3.10-1    
+## [17] survival_2.37-2  sandwich_2.2-9   quantreg_4.94    SparseM_0.96    
+## [21] gridExtra_0.9.1  mgcv_1.7-22      eeptools_0.1     mapproj_1.2-0   
+## [25] maps_2.3-0       proto_0.3-10     plyr_1.8         stringr_0.6.2   
+## [29] ggplot2_0.9.3    lmtest_0.9-30    zoo_1.7-9        knitr_0.9.6     
+## 
+## loaded via a namespace (and not attached):
+##  [1] codetools_0.2-8    compiler_2.15.2    dichromat_1.2-4   
+##  [4] digest_0.6.0       evaluate_0.4.3     formatR_0.7       
+##  [7] gtable_0.1.2       iterators_1.0.6    labeling_0.1      
+## [10] markdown_0.5.3     munsell_0.4        nlme_3.1-106      
+## [13] RColorBrewer_1.0-5 scales_0.2.3       stats4_2.15.2     
+## [16] tools_2.15.2
+</code></pre>
+
+<h1>Attribution and License</h1>
+
+<p xmlns:dct="http://purl.org/dc/terms/">
+<a rel="license" href="http://creativecommons.org/publicdomain/mark/1.0/">
+<img src="http://i.creativecommons.org/p/mark/1.0/88x31.png"
+     style="border-style: none;" alt="Public Domain Mark" />
+</a>
+<br />
+This work (<span property="dct:title">R Tutorial for Education</span>, by <a href="www.jaredknowles.com" rel="dct:creator"><span property="dct:title">Jared E. Knowles</span></a>), in service of the <a href="http://www.dpi.wi.gov" rel="dct:publisher"><span property="dct:title">Wisconsin Department of Public Instruction</span></a>, is free of known copyright restrictions.
+</p>
+
+</body>
+
+</html>

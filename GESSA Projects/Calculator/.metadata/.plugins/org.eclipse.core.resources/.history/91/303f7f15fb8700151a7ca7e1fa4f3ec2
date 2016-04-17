@@ -1,0 +1,21 @@
+
+public class MainClass {
+	public static void main(String args[]){
+		
+		//Two number hard coded:
+		int a = 10;
+		int b = 27;
+		
+		Calculator calobject = new Calculator();
+		
+		
+		
+		
+		
+		
+	}
+
+
+
+
+}

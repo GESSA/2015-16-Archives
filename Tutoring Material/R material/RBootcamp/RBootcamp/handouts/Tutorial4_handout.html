@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title>Overview</title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+</style>
+
+<!-- Styles for R syntax highlighter -->
+<style type="text/css">
+   pre .operator,
+   pre .paren {
+     color: rgb(104, 118, 135)
+   }
+
+   pre .literal {
+     color: rgb(88, 72, 246)
+   }
+
+   pre .number {
+     color: rgb(0, 0, 205);
+   }
+
+   pre .comment {
+     color: rgb(76, 136, 107);
+   }
+
+   pre .keyword {
+     color: rgb(0, 0, 255);
+   }
+
+   pre .identifier {
+     color: rgb(0, 0, 0);
+   }
+
+   pre .string {
+     color: rgb(3, 106, 7);
+   }
+</style>
+
+<!-- R syntax highlighter -->
+<script type="text/javascript">
+var hljs=new function(){function m(p){return p.replace(/&/gm,"&amp;").replace(/</gm,"&lt;")}function f(r,q,p){return RegExp(q,"m"+(r.cI?"i":"")+(p?"g":""))}function b(r){for(var p=0;p<r.childNodes.length;p++){var q=r.childNodes[p];if(q.nodeName=="CODE"){return q}if(!(q.nodeType==3&&q.nodeValue.match(/\s+/))){break}}}function h(t,s){var p="";for(var r=0;r<t.childNodes.length;r++){if(t.childNodes[r].nodeType==3){var q=t.childNodes[r].nodeValue;if(s){q=q.replace(/\n/g,"")}p+=q}else{if(t.childNodes[r].nodeName=="BR"){p+="\n"}else{p+=h(t.childNodes[r])}}}if(/MSIE [678]/.test(navigator.userAgent)){p=p.replace(/\r/g,"\n")}return p}function a(s){var r=s.className.split(/\s+/);r=r.concat(s.parentNode.className.split(/\s+/));for(var q=0;q<r.length;q++){var p=r[q].replace(/^language-/,"");if(e[p]){return p}}}function c(q){var p=[];(function(s,t){for(var r=0;r<s.childNodes.length;r++){if(s.childNodes[r].nodeType==3){t+=s.childNodes[r].nodeValue.length}else{if(s.childNodes[r].nodeName=="BR"){t+=1}else{if(s.childNodes[r].nodeType==1){p.push({event:"start",offset:t,node:s.childNodes[r]});t=arguments.callee(s.childNodes[r],t);p.push({event:"stop",offset:t,node:s.childNodes[r]})}}}}return t})(q,0);return p}function k(y,w,x){var q=0;var z="";var s=[];function u(){if(y.length&&w.length){if(y[0].offset!=w[0].offset){return(y[0].offset<w[0].offset)?y:w}else{return w[0].event=="start"?y:w}}else{return y.length?y:w}}function t(D){var A="<"+D.nodeName.toLowerCase();for(var B=0;B<D.attributes.length;B++){var C=D.attributes[B];A+=" "+C.nodeName.toLowerCase();if(C.value!==undefined&&C.value!==false&&C.value!==null){A+='="'+m(C.value)+'"'}}return A+">"}while(y.length||w.length){var v=u().splice(0,1)[0];z+=m(x.substr(q,v.offset-q));q=v.offset;if(v.event=="start"){z+=t(v.node);s.push(v.node)}else{if(v.event=="stop"){var p,r=s.length;do{r--;p=s[r];z+=("</"+p.nodeName.toLowerCase()+">")}while(p!=v.node);s.splice(r,1);while(r<s.length){z+=t(s[r]);r++}}}}return z+m(x.substr(q))}function j(){function q(x,y,v){if(x.compiled){return}var u;var s=[];if(x.k){x.lR=f(y,x.l||hljs.IR,true);for(var w in x.k){if(!x.k.hasOwnProperty(w)){continue}if(x.k[w] instanceof Object){u=x.k[w]}else{u=x.k;w="keyword"}for(var r in u){if(!u.hasOwnProperty(r)){continue}x.k[r]=[w,u[r]];s.push(r)}}}if(!v){if(x.bWK){x.b="\\b("+s.join("|")+")\\s"}x.bR=f(y,x.b?x.b:"\\B|\\b");if(!x.e&&!x.eW){x.e="\\B|\\b"}if(x.e){x.eR=f(y,x.e)}}if(x.i){x.iR=f(y,x.i)}if(x.r===undefined){x.r=1}if(!x.c){x.c=[]}x.compiled=true;for(var t=0;t<x.c.length;t++){if(x.c[t]=="self"){x.c[t]=x}q(x.c[t],y,false)}if(x.starts){q(x.starts,y,false)}}for(var p in e){if(!e.hasOwnProperty(p)){continue}q(e[p].dM,e[p],true)}}function d(B,C){if(!j.called){j();j.called=true}function q(r,M){for(var L=0;L<M.c.length;L++){if((M.c[L].bR.exec(r)||[null])[0]==r){return M.c[L]}}}function v(L,r){if(D[L].e&&D[L].eR.test(r)){return 1}if(D[L].eW){var M=v(L-1,r);return M?M+1:0}return 0}function w(r,L){return L.i&&L.iR.test(r)}function K(N,O){var M=[];for(var L=0;L<N.c.length;L++){M.push(N.c[L].b)}var r=D.length-1;do{if(D[r].e){M.push(D[r].e)}r--}while(D[r+1].eW);if(N.i){M.push(N.i)}return f(O,M.join("|"),true)}function p(M,L){var N=D[D.length-1];if(!N.t){N.t=K(N,E)}N.t.lastIndex=L;var r=N.t.exec(M);return r?[M.substr(L,r.index-L),r[0],false]:[M.substr(L),"",true]}function z(N,r){var L=E.cI?r[0].toLowerCase():r[0];var M=N.k[L];if(M&&M instanceof Array){return M}return false}function F(L,P){L=m(L);if(!P.k){return L}var r="";var O=0;P.lR.lastIndex=0;var M=P.lR.exec(L);while(M){r+=L.substr(O,M.index-O);var N=z(P,M);if(N){x+=N[1];r+='<span class="'+N[0]+'">'+M[0]+"</span>"}else{r+=M[0]}O=P.lR.lastIndex;M=P.lR.exec(L)}return r+L.substr(O,L.length-O)}function J(L,M){if(M.sL&&e[M.sL]){var r=d(M.sL,L);x+=r.keyword_count;return r.value}else{return F(L,M)}}function I(M,r){var L=M.cN?'<span class="'+M.cN+'">':"";if(M.rB){y+=L;M.buffer=""}else{if(M.eB){y+=m(r)+L;M.buffer=""}else{y+=L;M.buffer=r}}D.push(M);A+=M.r}function G(N,M,Q){var R=D[D.length-1];if(Q){y+=J(R.buffer+N,R);return false}var P=q(M,R);if(P){y+=J(R.buffer+N,R);I(P,M);return P.rB}var L=v(D.length-1,M);if(L){var O=R.cN?"</span>":"";if(R.rE){y+=J(R.buffer+N,R)+O}else{if(R.eE){y+=J(R.buffer+N,R)+O+m(M)}else{y+=J(R.buffer+N+M,R)+O}}while(L>1){O=D[D.length-2].cN?"</span>":"";y+=O;L--;D.length--}var r=D[D.length-1];D.length--;D[D.length-1].buffer="";if(r.starts){I(r.starts,"")}return R.rE}if(w(M,R)){throw"Illegal"}}var E=e[B];var D=[E.dM];var A=0;var x=0;var y="";try{var s,u=0;E.dM.buffer="";do{s=p(C,u);var t=G(s[0],s[1],s[2]);u+=s[0].length;if(!t){u+=s[1].length}}while(!s[2]);if(D.length>1){throw"Illegal"}return{r:A,keyword_count:x,value:y}}catch(H){if(H=="Illegal"){return{r:0,keyword_count:0,value:m(C)}}else{throw H}}}function g(t){var p={keyword_count:0,r:0,value:m(t)};var r=p;for(var q in e){if(!e.hasOwnProperty(q)){continue}var s=d(q,t);s.language=q;if(s.keyword_count+s.r>r.keyword_count+r.r){r=s}if(s.keyword_count+s.r>p.keyword_count+p.r){r=p;p=s}}if(r.language){p.second_best=r}return p}function i(r,q,p){if(q){r=r.replace(/^((<[^>]+>|\t)+)/gm,function(t,w,v,u){return w.replace(/\t/g,q)})}if(p){r=r.replace(/\n/g,"<br>")}return r}function n(t,w,r){var x=h(t,r);var v=a(t);var y,s;if(v){y=d(v,x)}else{return}var q=c(t);if(q.length){s=document.createElement("pre");s.innerHTML=y.value;y.value=k(q,c(s),x)}y.value=i(y.value,w,r);var u=t.className;if(!u.match("(\\s|^)(language-)?"+v+"(\\s|$)")){u=u?(u+" "+v):v}if(/MSIE [678]/.test(navigator.userAgent)&&t.tagName=="CODE"&&t.parentNode.tagName=="PRE"){s=t.parentNode;var p=document.createElement("div");p.innerHTML="<pre><code>"+y.value+"</code></pre>";t=p.firstChild.firstChild;p.firstChild.cN=s.cN;s.parentNode.replaceChild(p.firstChild,s)}else{t.innerHTML=y.value}t.className=u;t.result={language:v,kw:y.keyword_count,re:y.r};if(y.second_best){t.second_best={language:y.second_best.language,kw:y.second_best.keyword_count,re:y.second_best.r}}}function o(){if(o.called){return}o.called=true;var r=document.getElementsByTagName("pre");for(var p=0;p<r.length;p++){var q=b(r[p]);if(q){n(q,hljs.tabReplace)}}}function l(){if(window.addEventListener){window.addEventListener("DOMContentLoaded",o,false);window.addEventListener("load",o,false)}else{if(window.attachEvent){window.attachEvent("onload",o)}else{window.onload=o}}}var e={};this.LANGUAGES=e;this.highlight=d;this.highlightAuto=g;this.fixMarkup=i;this.highlightBlock=n;this.initHighlighting=o;this.initHighlightingOnLoad=l;this.IR="[a-zA-Z][a-zA-Z0-9_]*";this.UIR="[a-zA-Z_][a-zA-Z0-9_]*";this.NR="\\b\\d+(\\.\\d+)?";this.CNR="\\b(0[xX][a-fA-F0-9]+|(\\d+(\\.\\d*)?|\\.\\d+)([eE][-+]?\\d+)?)";this.BNR="\\b(0b[01]+)";this.RSR="!|!=|!==|%|%=|&|&&|&=|\\*|\\*=|\\+|\\+=|,|\\.|-|-=|/|/=|:|;|<|<<|<<=|<=|=|==|===|>|>=|>>|>>=|>>>|>>>=|\\?|\\[|\\{|\\(|\\^|\\^=|\\||\\|=|\\|\\||~";this.ER="(?![\\s\\S])";this.BE={b:"\\\\.",r:0};this.ASM={cN:"string",b:"'",e:"'",i:"\\n",c:[this.BE],r:0};this.QSM={cN:"string",b:'"',e:'"',i:"\\n",c:[this.BE],r:0};this.CLCM={cN:"comment",b:"//",e:"$"};this.CBLCLM={cN:"comment",b:"/\\*",e:"\\*/"};this.HCM={cN:"comment",b:"#",e:"$"};this.NM={cN:"number",b:this.NR,r:0};this.CNM={cN:"number",b:this.CNR,r:0};this.BNM={cN:"number",b:this.BNR,r:0};this.inherit=function(r,s){var p={};for(var q in r){p[q]=r[q]}if(s){for(var q in s){p[q]=s[q]}}return p}}();hljs.LANGUAGES.cpp=function(){var a={keyword:{"false":1,"int":1,"float":1,"while":1,"private":1,"char":1,"catch":1,"export":1,virtual:1,operator:2,sizeof:2,dynamic_cast:2,typedef:2,const_cast:2,"const":1,struct:1,"for":1,static_cast:2,union:1,namespace:1,unsigned:1,"long":1,"throw":1,"volatile":2,"static":1,"protected":1,bool:1,template:1,mutable:1,"if":1,"public":1,friend:2,"do":1,"return":1,"goto":1,auto:1,"void":2,"enum":1,"else":1,"break":1,"new":1,extern:1,using:1,"true":1,"class":1,asm:1,"case":1,typeid:1,"short":1,reinterpret_cast:2,"default":1,"double":1,register:1,explicit:1,signed:1,typename:1,"try":1,"this":1,"switch":1,"continue":1,wchar_t:1,inline:1,"delete":1,alignof:1,char16_t:1,char32_t:1,constexpr:1,decltype:1,noexcept:1,nullptr:1,static_assert:1,thread_local:1,restrict:1,_Bool:1,complex:1},built_in:{std:1,string:1,cin:1,cout:1,cerr:1,clog:1,stringstream:1,istringstream:1,ostringstream:1,auto_ptr:1,deque:1,list:1,queue:1,stack:1,vector:1,map:1,set:1,bitset:1,multiset:1,multimap:1,unordered_set:1,unordered_map:1,unordered_multiset:1,unordered_multimap:1,array:1,shared_ptr:1}};return{dM:{k:a,i:"</",c:[hljs.CLCM,hljs.CBLCLM,hljs.QSM,{cN:"string",b:"'\\\\?.",e:"'",i:"."},{cN:"number",b:"\\b(\\d+(\\.\\d*)?|\\.\\d+)(u|U|l|L|ul|UL|f|F)"},hljs.CNM,{cN:"preprocessor",b:"#",e:"$"},{cN:"stl_container",b:"\\b(deque|list|queue|stack|vector|map|set|bitset|multiset|multimap|unordered_map|unordered_set|unordered_multiset|unordered_multimap|array)\\s*<",e:">",k:a,r:10,c:["self"]}]}}}();hljs.LANGUAGES.r={dM:{c:[hljs.HCM,{cN:"number",b:"\\b0[xX][0-9a-fA-F]+[Li]?\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\b\\d+(?:[eE][+\\-]?\\d*)?L\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\b\\d+\\.(?!\\d)(?:i\\b)?",e:hljs.IMMEDIATE_RE,r:1},{cN:"number",b:"\\b\\d+(?:\\.\\d*)?(?:[eE][+\\-]?\\d*)?i?\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\.\\d+(?:[eE][+\\-]?\\d*)?i?\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"keyword",b:"(?:tryCatch|library|setGeneric|setGroupGeneric)\\b",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\.\\.\\.",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\.\\.\\d+(?![\\w.])",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\b(?:function)",e:hljs.IMMEDIATE_RE,r:2},{cN:"keyword",b:"(?:if|in|break|next|repeat|else|for|return|switch|while|try|stop|warning|require|attach|detach|source|setMethod|setClass)\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"literal",b:"(?:NA|NA_integer_|NA_real_|NA_character_|NA_complex_)\\b",e:hljs.IMMEDIATE_RE,r:10},{cN:"literal",b:"(?:NULL|TRUE|FALSE|T|F|Inf|NaN)\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"identifier",b:"[a-zA-Z.][a-zA-Z0-9._]*\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"operator",b:"<\\-(?!\\s*\\d)",e:hljs.IMMEDIATE_RE,r:2},{cN:"operator",b:"\\->|<\\-",e:hljs.IMMEDIATE_RE,r:1},{cN:"operator",b:"%%|~",e:hljs.IMMEDIATE_RE},{cN:"operator",b:">=|<=|==|!=|\\|\\||&&|=|\\+|\\-|\\*|/|\\^|>|<|!|&|\\||\\$|:",e:hljs.IMMEDIATE_RE,r:0},{cN:"operator",b:"%",e:"%",i:"\\n",r:1},{cN:"identifier",b:"`",e:"`",r:0},{cN:"string",b:'"',e:'"',c:[hljs.BE],r:0},{cN:"string",b:"'",e:"'",c:[hljs.BE],r:0},{cN:"paren",b:"[[({\\])}]",e:hljs.IMMEDIATE_RE,r:0}]}};
+hljs.initHighlightingOnLoad();
+</script>
+
+<!-- MathJax scripts -->
+<script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+</head>
+
+<body>
+<p>% Tutorial 4: Cleaning and Merging Data
+% DPI R Bootcamp
+% Jared Knowles</p>
+
+<h1>Overview</h1>
+
+<p>In this lesson we hope to learn about:</p>
+
+<ul>
+<li>The Strategic Data Project</li>
+<li>Checking data for errors</li>
+<li>Recoding data and changing data types</li>
+<li>Diagnostics and error checks</li>
+</ul>
+
+<p align="center"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIoAAABRCAYAAAANfj6IAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAE9JJREFUeNrsXU2ILNd1vm8yeGEspmWyMPZiWgElm4QuGWxQFpkavA28FniTEDOlRYI25pVsL22mBm0lXg3aePdqwOAQBKq3TzI1i0QQCKrJLkqQalbxTt1Eq2B4uaf1nenTZ+6tv66eaaE+UHR39a17z733u+fv/tSjFy9eGKJHP/+n2H5M7ZW+eO9Huf2d2e9j3BvZi35X9r/IgGyagNLbq7T3YyPI/kfpYjxL/0+NIpQZoZySvtt0lUpDzyX2mtjrir7bNIVKw3zMqByUvSjf/i5FuhHSTVHeoq4qL/o/sPdDTxmLNuB0uoy+9Cd//mtZzxu0d/qf//rWzGwB7Ynv1PhH1MBolBP+jesIjStphPuBI+9nqHTuKhgAeAqQLDoA+ek0HyLNGcq5tPfHHj4eA3xj/B6pdBHqVaEuIwdrAZ41njJOwFfgKaMPSDLUc4Jbh/Y6JR7tf8FWAQWj4poaGx1HNIdUYCmSdcj7WjR85PifJRCNSJISkWNkRjKNKD+qKTcBUFzE+U8gGbKe7ZYNARCAJAZ4XUSAKbYBLHvqNwPkCOIvB7N0XdiG7SIGSXQ/R14FxL6Lqpo8+JmZ+vQR8Xzga3iorDcwAJ5anpIebXaFMiYDgGQEYNfRAcAy2iag5GhEBk2qRlEX4ufnaNTAM7pjUnVkVzhUCqst+i+EbWEcKlCC7szHEGyXcUvJ5CMC2/lA7R8BCKYFWOKtAQokBjdiBlVAI+hGG5AtiDr1EpW8cXRugrxJ1X0Mm2bkEPGc5hKAO9cGqKpDgvJ8RHbREwXErpSIAbUOTc1XhPY9jZAJNVM36qjzj10qwT4/glE8coEM+Ydd0sCuqFrwEQpPSuZHwMsgnXx5xR77g8ug52bgaVwj3drQUUdJ9mD0iN3jHd0/WbujbePPrZu8VTbKju4PJGGH5OVD87uvjL1CeBeFFbGpMAKlCiLVlImgE1cmYZUFjyKUATKVvsJ/lShX519wEA3PL4KAHAzTz9F9ERjLOKim8rtTjsPoHQs3W/IZaAN/DRf7K0V7Dp05AlCk+8gBrAq6slLBqRkMxEzp+iMFMJn+RDR6IcqvRP4cREvBy4nS60fi+UIFxlLB91ik43tFjWteoKwxPnXepuH5JmmiAdfkjifbBhSDERwJo9Cojg4dAS0pJTiieoCg24kjhhLAa0iEp1KIUSpH/hwgPPXUYQyeRg6XMnV4RBV/dxnQkBqH8JxCfB7ivi5z3AMkEeraJg5DdY+sfVI8NFD2PfEGn+HE4rxy3Rdu61QFzKZK2pRwedsYaKXwZkYOT6FA3trzOhducBeaKd5LAKcSA4LLrHqA5FlDsmvwQFdiQVKZLSAXUAJhPKWOANEM/8dqpEqQnQiReekASgygRG3cPmGjuNLKkR2qYN0Y5bQm2CIXqEMJyXQBl/g2sNc1rgR186xF0jGkSG62iDRQjsV3GWfIVIfOGmIOHG+gRn9NpIkRM6H7xw6pVCgLX8dodHnHNfGOEkAM1MiPmyQZZodzHjRCUt7GUnq0dVubhID5oQXWuQVLvC1A2cVR7s8Vvuzx6HGdfQLvbOqw0Qop5Tdmo+xocIp6Ppf5DGaELFLjnis6sv9XQ7ru+5iVjB22goyPzCyyy11/96a+czqHtKBJ2yvwKp+1KHMwoOwJMKQQj5cwBKcAEP3+2DJcdYwm7uhLtTM27WaIu0ijNrbL4xrvtTtQaKkdECsLJxSH9hrDeLuGi3iJJXs7ak/jNZ9/DLD1ocEGdqONQsYUwFGKIFb+NZEGI6jgMa5ZD1U8xKiOTL/obDBUX7UyZinoYxuNAHIKvRlCNUVKrF7YtJGn0XMV07gRMRBqBN+U+3MEnkolzim/icov9sUf7DMJpCbzO0f6zOOl1PFEaQwkbdIQ8wg2AJTCdFuiMJiN0tYCv608fHzJ/JUPJAAbAetcdBLlUcH9m5rlQiCKHzyyny8T8ACulXWjeC4wy3W5rC7zmvITFctIPCDJhCtLyyZfJn74sr9fMV+uovOt3NNUDdBPh4jqyphMm4VTxb0DBaHkuRSn9l7akanbwJXchoDvLDFmfA/AuzKOeRuV31VLVVCIMlMPSE4gGclGy/V2CYA0Mc3LMocEipGDEjP0TS733Ay4PKHrepSyBhSbcp/lgu9N2iMRQFIrGaXtBnU3xL6btyFBX1FS0itVEC0+qwFJ2HEx/Po2iie2omlTG5XuK36T6JHbAcQ+8C3UIewZH10I6TaDfVQY9+wy8ZYhIpvVDB6SwDmmIbIhNqjtdRhxIRh4/kC71643LE0WSws6TulnDUCOhaHdxvZjlRvAPrsjVR69mRN/n7WQsFQfmj3/2AKmpI1x68RV9jqOuLnZ3LaBoiEWkGwQhGEf6YVOrRs0RzDCOxuVUH+3YPn9/p755E+/Z8y3X+qjgkk60e6Dz2mVYB/A7LUYbSO4tgHcyWrDkmOk3OAU4nmTsZtgg2ou6hvLYLD877e+YT59zTbFS98cgp/Fllq1EKs/UMgDsFcBq30Gdza7BxXzhFanY4X6Z1B31YZ3yk02mDe77b32AX3y+qvF//yZ1SL7fzAkT4vdh10ky34Dmh+CLsxy1pSn0CnQNyU7aVt293eMgYSo0xOPNHOqJswQP9sQX7z7MFlLojwgLYJwJL0QpAtFcKvYcNmbklpJjYcUbhAk14hD1alFc99AGW+ikxBIYwN6oiKUQ3tU4YaAwjsBXJ7MY61WsZOxD0hoQFH0+9i6xI/sxee8vOzzojYVRxkKKGWNQekCS4a5pgN05tC2UgmJRUAcb8hgT6BKeYeCdqOTlvGZCxjHM9V25bs/fqdC/tF7H71zm9+7Pzbxz18vItgkj/swvz/QaJx0lBqznp15NIDk8rnmJ0IcJxuSKhFAoaVFTAOB7C8E0yaedp7SeuP3Pgr1rDaDzQeC3D5j0/8q6wuUvYFGY1uxHTbETNrQ4MYsvDkOip22PbgGoYO69Tk3DqlSONTAgZCSPjtpaiXGzHY4Pf+5+XLi8hkM/dMGABxCCpUO6XRvQClEcKlptC9midfc0FR4RquvM6e+TnaIf6aspTsemfrZ48oBiBwde+2wVfg8OJcrPbPqY7aGwX30s/C37yt7Jl4XKKOeozGt6bAYyG7athA4nh0DDPMu9olYD9xYDmId5yKu0uZIrLhBOs48MZszSFcNlqcw1l2qLxVSuVdM5rt/+N9/Of7epyzpOk0a7nlcpa5hel5PQqMil5IF4pkqTiHkK0zR13VcSFKAR7RYpLTgUcVRQlFOKtf0evb3hnVuKdbYnIkO/RiBx6mUMFQOotWHpmYZgVqDI4n3XbvA8uyPP/qvmUMt0Nbc4hcf/CpYxzt76wcf/F/8F//wk64ThYt9PejIU5d13TZ0jo7JhcvFWyNZLZy5QIIOSI3/wDuDWEAiVRa8oDZbRhcbqTBS5faGOX5n2stBXeIGngyAH7ZomzGkRKhc0gvh8ei6vPnJ66+OjXvP9dVPvv/P/zH5o3/56RoOSAhV1gkogYhZyLM7yq6RUOQVmtW9u0VdPihvUZZYp2rqeEA5M+5kx3Mrz6OzRrqOdfaSyDNQ6rjiwGDXHtJ8ch64P4UXw+VlFMIXbvVIekQWLF9YsHyrJ1ieW6BMOwFlR19NgptcmG5zVXLlW2rBku+A8vUAy9gsd0iYhkBdYoHRK5jIqoePN1+xsrdtR/2OvGAJEVe5hp1YwJ0u8Z+x39cJSSwlCsDyFPePt+Hwlh11kyx9pUVXoDAqDbYl7GhHt7SvLHmfpZ6Yhjc9eIJbqfBkYuH/8/aMTAST2vr1FZ4PPAGuQm/dQHQ2cPHm8L6kuzvT2zrgPemjJrg+t94Q8opM++0ahXguVPEYX1ghUnxUyCer8UgbF6A52qvcF8xUNavFT8FQU8yAN7tTrOANUaHCLN+iwcGuU9znGc22k1VXZjm5diTucdDuwJZJv6cCCJVKf14DwlCkO3YMmFN4DnLuJJDxDpvuGPmcdBy4BXiYCk/mzBNOYPsxM8sIMLXLCcyIyLHXiZ6j6G+Ta8/tQLEd2qmZr3g9fECuVj3i4Ny3XRunVNpFIIzzEFs5x3IEY5klB6FWRo1Qg7cBLTGCFhvoa9Kwu7gSDFOH2bziW0oAiUFLMFe2x4oAn/MkJLnNleqOyG0h20sA7Tb4KF6cMBP3qFya8LvBQQHGUY/n5m6kWoM5VFtx+b8bSJYmDfE589p1UvBpi/kPXThVOncwldeJVk1Y8Z6a5U7CwpVGqL+VSUqZvm69ifivUqL4CcAT1zwXKVWStqxX7BjRd8wBdF4O7yZydTTa8gLucu6Z3Dw0DXNmOu8+s8dZx/S+VVQZljwmXTLD/End/4UZfsUa7/WNG8ouMVpNG5A02SEePggASUPEPAa/hzU8P+5yhEkXoNxOlkEMd6GwCbEDE4/EId7OFaLB85Y8Z5uokAjx3zTFt8BnJiS6JLmONmt79kpXicJG4JMOpy8tDvSFfrwvKtXnOjQVhuZQkqEvHwem/aIvBsqhMhcmAM/crC6YGg4o0KXXAo2jDgyfbmhhtIuCJpf/gfJah8IufCiPZ1xjTx3BSxpUokhRdtgSjalZLmx6dk9gCeD1DNG5R1sClLHHWWgKJRhXzAnq63lbJ6UzUIDUt4VBFLXQl9Jo2ihYhE0x6B7pbTlq3Ay77TUSg7hWQ+z1bLRUoDVtMogArjcVWIY6NPAIq9ASGNk5fP9yYACOtwQowYDglwfyTEzN7oO9NdHIBlHegqlMgSUbaD/x3CzfdhGZ9Y7qbCP6H5r6tNmsIZwgnZTpoEBRBtGkjVejwHJghnn5YoljtEKRXzygBNj0LsKund2nXuW6Tspa2zVgEF0IryZoMrYAlgvleg4lSguzPPOtl5vqaKRyE7yu0dldAHvUwa5xuczzQYDCo1eisaV3kK4hRtt6ZSeOWM8cYAha2AD6vLrJA5/cnXviIj7Ac5pWJ2SpPd7spJR3gNK3ETwG0Q0z66rUJs/Vh0o8VzEcozq9NVDUvqWkRQfFbXca9vA2r8XgbDtg8g5lZMJlTqWa2xuwEm8LsFRCYgQ1HsQQgHFJpQTSQ0eEC9WIvga+Vu6wnGhMW3TQplzppEZa6vaNEEvKerrMB0bsW9pzNbjHEGxygVOBRvlM1APtYYuRGwpguqRcomwnljBzdHjkkgYuN1HZYk/gjo884n5SI+pHLVWuM53iI3dJLjHD7B0QdYa+I+61AIpc4TZVyI2UcUdrQEYN+i4yd+cijrD2hJcIUAfTmoiLmsUzoXg29KQLRMUjPXIIuAATn3w9xQoy4vFDxHIC1ah8GHHuaMDIpue3sVK6KQ4wlu8gjEz9wTXcxpRX3QzwVNpFaolEhAVmxAPtZLwQKpY3rhEvoSNIKN/xmNZpCJsveae3py7UrcJnkaszTBo2TQVIMxWLckIx8hc79HyTZ212BIiz6leMPc9p1IkA3gx8BXhen82ftFgmyPEa1zknZEPErvaBytISIHYs24wckiDTfCFdbO6+DyAz7mWeuvyq6fg1DITFcpDdvp4dtaK9XRPsaAeUHe2AsqMdUHa0A8qOvqp0G0fB2aaSyr7ve8ExlcEQeXnyv+XV5lvwue58ipAqf1Z3uhDSUn7FUDziMOFCvInerNGO4yFeo4L8xsivWEeiJPDBL/F9vAZPAfJJB8jLRfzK3Uu8kyY1q/EeLp/qQ68hST0NR+moMykAt3hNib2SmoZOmzqW3l5hvgxUZQPU03sEOfEOQHahyLR8ozsNRpn/ShwFjXRKpx7jd2yWb7osUdAMV4Hf1CBTjNxMjHhi6Bgjnn7T4XIJyqBnR+J5jtgWABWX5Xwpkc2DmD43y4VKV8ivNMttmYvykeaE66TyobIpwvkaeEjM8sDjHN8X9RJpz0Q9iNdUSDKu94UYIJxfJD557zTPIaWifD5AkJ77wl6/R734FCYOPBa4nwhQ5aJfZoJ3GbF9TG0h+TfLOTln/tSH+zWI4mMw5migvzLL7Yg0WfQ3ZrnxnNY9vOka+TYfw89C9FFe/4ZRfBtJRN4EuH/HiHwO5n1il888O0e6CSp6Ylb3DNeJ/wRlUqP8tZJ8CRr7hFWAahtuC95vw2rwAjzwgOI91vLzWvDLEpAn4E7RrpUAykg8F6PtOSpMR3P9BmVRpPlvZT9ZfmZmuR/82sE/CwL+TXX5pVFR5zpjdirQTvQdIb6IXsV/fKyna4KPz2T/e4z6E3z+UNovSjS+D4YfN6gs6pDXbN48Kq+MexKsLg/uZGqUv0NH0ihMzPJt8nOkKwCGRLTNTAIRAyEBL08aVMpcjORDszpHVNE59gCJEfXj1/F+IUb9F7g3UnlECoTPRR/JUxhmqv0mMn+2Z+qAwjqWNzz/zpHmdke9xxBM6chL6LpU5KsZNsIYHYF5KrPCa85cAKhaGHmsLs6hcyv1jpopVMUcHbw4E5/SmbvHqS7euYP/nPwDlJ8JCTtT7STb7QAgK0VevvS+gcISfW7q1wpfY+DFSsqOaiT2Bey2ZMXrEQjlTsugNsYCNGco5EzoUWPuThxyGtmpBJgzYcfw0RC5anDWuwsgACQahGdmdZY6U+XK8gvhGel8Uu4sgI7Ke0O0Bb9BfgxeQnzPIdKlTmfVQ/UaIY08GTMUHZQovrmOOdq7cNSrkvWz+UfsXQnbp8Sl+4n/r8A/9+1I2It1+dvKWWO272V+9o+VvfJ18mhRxnSgfEJ7jTbJa0s+XhAvD81H12vdt2tEZsM76PB+3yHyKcx20LG5v1f0Dkb/L8AAKMV0xqT5C3sAAAAASUVORK5CYII=" height="81" width="138"></p>
+
+<h1>Data Setup</h1>
+
+<ul>
+<li>Let&#39;s read in a new dataset now that has some messiness to it</li>
+</ul>
+
+<pre><code class="r">load(&quot;data/Student_Attributes.rda&quot;)
+head(stuatt[, 1:4], 7)
+</code></pre>
+
+<pre><code>  sid school_year male race_ethnicity
+1   1        2004    1              B
+2   1        2005    1              H
+3   1        2006    1              H
+4   1        2007    1              H
+5   2        2006    0              W
+6   2        2007    0              B
+7   3        2006    1              H
+</code></pre>
+
+<ul>
+<li>What&#39;s wrong with this?</li>
+</ul>
+
+<h1>How can R help correct this?</h1>
+
+<ul>
+<li>Identify problems</li>
+<li>Enforce business rules for messy data consistently</li>
+<li>Build data cleaning into all analyses tasks across the workflow</li>
+<li>Analyze inconsistencies and do reports</li>
+</ul>
+
+<h1>Strategic Data Project</h1>
+
+<ul>
+<li><a href="http://www.gse.harvard.edu/%7Epfpie/index.php/sdp/">The Strategic Data Project</a> is a project housed at Harvard Center for Education Policy Research aimed at bringing high quality research methods and data analysis to bear on strategic management and policy decisions in the education sector</li>
+<li>SDP was formed on two fundamental premises:</li>
+</ul>
+
+<ol>
+<li>Policy and management decisions can directly influence schools&#39; and teachers&#39; ability to improve student achievement</li>
+<li>Valid and reliable data analysis significantly improves the quality of decision making</li>
+</ol>
+
+<ul>
+<li>Their focus is on bringing together the right people, assembling the right data, and performing the right analysis because this will improve decisions made by leadership</li>
+<li>They are smart folks who have done a lot of the important but unexciting work of systematically identifying how to clean, document, and transparently evaluate datasets</li>
+</ul>
+
+<p align="center"><img src="data:image/gif;base64,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" height="112" width="329"></p>
+
+<h1>Toolkit - Data Cleaning</h1>
+
+<ul>
+<li>The SDP has come up with a great tutorial and guided analyses using a great synthetic data set to help walk through the process of cleaning data</li>
+<li>This was written in Stata, we are porting it to R (you can contribute to this effort if you like), and are going to walk through just a single lesson of it here (Clean Data Building)</li>
+<li>You can get the toolkit lesson that this tutorial is adapted from <a href="http://www.gse.harvard.edu/%7Epfpie/index.php/sdp/tools">online</a></li>
+<li>There are five toolkits in addition to a data guide that are incredibly helpful, so we are just touching the tip of the iceberg</li>
+<li>Other modules include:</li>
+</ul>
+
+<ol>
+<li>How to identify essential data elements for analyzing student achievement</li>
+<li>Clean, check, and build variables in the dataset</li>
+<li>Connect relevant datasets from different soruces</li>
+<li>Analyze datasets</li>
+<li>Adopt coding best practices to facilitate shared and replicable data analysis</li>
+</ol>
+
+<h1>SDP Task 1 Student Attributes Intro</h1>
+
+<ul>
+<li>Drop the <code>first_9th_school_year_reported</code> variable</li>
+</ul>
+
+<pre><code class="r">stuatt$first_9th_year_reported &lt;- NULL
+</code></pre>
+
+<ul>
+<li>To drop variables in R we assign them <code>NULL</code>, another R quirk</li>
+</ul>
+
+<h1>SDP Task 1 - Step 1: Consistent Gender</h1>
+
+<ul>
+<li>Is gender unique for each student?</li>
+</ul>
+
+<pre><code class="r">length(unique(stuatt$sid))
+</code></pre>
+
+<pre><code>[1] 21803
+</code></pre>
+
+<pre><code class="r">length(unique(stuatt$sid, stuatt$male))
+</code></pre>
+
+<pre><code>[1] 21806
+</code></pre>
+
+<ul>
+<li>Nah, we have 21,803 unique students in our dataset, but <em>21,806</em> unique combinations of gender and student</li>
+</ul>
+
+<h1>Testing Uniqueness</h1>
+
+<ul>
+<li>Below we write a small function that automates the check we did on the last slide</li>
+<li>How does this work?</li>
+</ul>
+
+<pre><code class="r">testuniqueness &lt;- function(id, group) {
+    length(unique(id)) == length(unique(id, group))
+}  # Need better varname and some optimization to the speed of this code
+testuniqueness(stuatt$sid, stuatt$male)
+</code></pre>
+
+<pre><code>[1] FALSE
+</code></pre>
+
+<pre><code class="r">testuniqueness(stuatt$sid, stuatt$race_ethnicity)
+</code></pre>
+
+<pre><code>[1] FALSE
+</code></pre>
+
+<pre><code class="r">testuniqueness(stuatt$sid, stuatt$birth_date)
+</code></pre>
+
+<pre><code>[1] FALSE
+</code></pre>
+
+<ul>
+<li>Messy&hellip;</li>
+</ul>
+
+<h1>Where is the data messy?</h1>
+
+<pre><code class="r">stuatt[17:21, 1:3]
+</code></pre>
+
+<pre><code>   sid school_year male
+17   7        2004    1
+18   7        2005    1
+19   7        2006    1
+20   7        2007    0
+21   7        2008    1
+</code></pre>
+
+<ul>
+<li>Student 7 has an inconsistently reported gender in our data</li>
+<li>We need a business rule to handle fixing this, and a way to implement it</li>
+<li>SDP provides the rule, R provides the systematic implementation</li>
+</ul>
+
+<h1>Unifying Consistent Gender Values</h1>
+
+<ul>
+<li>First we create a variable with the number of unique values gender takes per student</li>
+<li>In R to do this we create a summary table of student attributes by collapsing the data set into one row per student using the <code>plyr</code> strategy we learned in Tutorial 3</li>
+<li>Then we ask R to tell us how many rows have what values for the length of gender</li>
+</ul>
+
+<pre><code class="r">library(plyr)
+sturow &lt;- ddply(stuatt, .(sid), summarize, nvals_gender = length(unique(male)))
+table(sturow$nvals_gender)
+</code></pre>
+
+<pre><code>
+    1     2 
+21799     4 
+</code></pre>
+
+<ul>
+<li>So 4 students have more than one unique value for gender</li>
+</ul>
+
+<h1>Fixing the pesky observations</h1>
+
+<ul>
+<li>At this point there are a number of business rules we could adopt</li>
+<li>We could assign students the most recent value, the most frequent value, or even a random value!</li>
+<li>Let&#39;s see if replacing it with the most frequent value works</li>
+</ul>
+
+<pre><code class="r"># A function to find the most frequent value
+library(eeptools)
+sturow &lt;- ddply(stuatt, .(sid), summarize, nvals_gender = length(unique(male)), 
+    gender_mode = statamode(male), gender_recent = tail(male, 1))
+head(sturow[7:10, ])
+</code></pre>
+
+<pre><code>   sid nvals_gender gender_mode gender_recent
+7    7            2           1             1
+8    8            1           1             1
+9    9            1           1             1
+10  10            1           1             1
+</code></pre>
+
+<h1>Fixing observations II</h1>
+
+<ul>
+<li>Now we have two objects <code>stuatt</code> and <code>sturow</code> and we need to replace some values from <code>stuatt</code> with some values from <code>sturow</code></li>
+<li><code>merge</code> to the rescue!</li>
+<li>Let&#39;s <code>merge</code> our two data objects into a temporary data object called <code>tempdf</code></li>
+</ul>
+
+<pre><code class="r">tempdf &lt;- merge(stuatt, sturow)  # R finds the linking variable already
+head(tempdf[17:21, c(1, 2, 3, 10, 11)])
+</code></pre>
+
+<pre><code>   sid school_year male nvals_gender gender_mode
+17   7        2004    1            2           1
+18   7        2005    1            2           1
+19   7        2006    1            2           1
+20   7        2007    0            2           1
+21   7        2008    1            2           1
+</code></pre>
+
+<pre><code class="r">print(subset(tempdf[, c(1, 2, 3, 10, 11)], sid == 12506))
+</code></pre>
+
+<pre><code>        sid school_year male nvals_gender gender_mode
+50064 12506        2004    1            2           .
+50065 12506        2005    0            2           .
+</code></pre>
+
+<ul>
+<li>We fixed observation 7, but not observation 12506</li>
+</ul>
+
+<h1>Fixing where the mode does not work</h1>
+
+<pre><code class="r">print(subset(tempdf[, c(1, 2, 3, 10, 11, 12)], sid == 12506))
+</code></pre>
+
+<pre><code>        sid school_year male nvals_gender gender_mode gender_recent
+50064 12506        2004    1            2           .             0
+50065 12506        2005    0            2           .             0
+</code></pre>
+
+<ul>
+<li>Our next business rule is to assign the most recent value of gender from the <code>gender_recent</code> variable when there is not a value of <code>gender_mode</code> that is valid</li>
+<li>This seems like a pretty simple job for <code>recoding</code> our variable!</li>
+</ul>
+
+<h1>Recode Gender</h1>
+
+<ul>
+<li>Two step process: first we assign <code>tempdf$male</code> to be the same as <code>tempdf$gender_mode</code></li>
+<li>Then, where <code>tempdf$male</code> is now a &ldquo;.&rdquo; indicating no modal category exists, we assign <code>tempdf$gender_recent</code> to be <code>tempdf$male</code></li>
+<li>Go ahead and try this and use <code>testuniqueness(tempdf$id,tempdf$male)</code> to check if it worked</li>
+</ul>
+
+<h1>Results</h1>
+
+<pre><code class="r">tempdf$male &lt;- tempdf$gender_mode
+tempdf$male[tempdf$male == &quot;.&quot;] &lt;- tempdf$gender_recent[tempdf$male == &quot;.&quot;]
+# we have to put the filter on both sides of the assignment operator
+testuniqueness(tempdf$id, tempdf$male)
+</code></pre>
+
+<pre><code>[1] TRUE
+</code></pre>
+
+<ul>
+<li>Now let&#39;s clean up our workspace, we created a lot of temporary variables that we don&#39;t need</li>
+</ul>
+
+<pre><code class="r">rm(sturow)
+stuatt &lt;- tempdf
+stuatt$nvals_gender &lt;- NULL
+stuatt$gender_mode &lt;- NULL
+stuatt$gender_recent &lt;- NULL
+# or just run stuatt&lt;-tempdf[,1:9]
+rm(tempdf)
+</code></pre>
+
+<h1>Create a consistent race and ethnicity indicator</h1>
+
+<ul>
+<li>Let&#39;s practice the same procedure on race</li>
+</ul>
+
+<h3>A Note About Variable Types</h3>
+
+<ul>
+<li>In the SDP Toolkit you are advised to convert the <code>race_ethnicity</code> variable to numeric and add labels to it</li>
+<li>This is because Stata and other statistical packages don&#39;t have internal data structures that can handle the <code>factor</code> variable type like R can, and rely on numeric coding schemes</li>
+<li>Why don&#39;t we need to do this in R?</li>
+<li>In fact, in R, we should probably recode the <code>male</code> variable as a factor with values <code>M</code> and <code>F</code></li>
+<li>One problem is that our datafile uses &#39;NA&#39; for Native American and we do have to recode that&hellip; why?</li>
+</ul>
+
+<h1>Recoding Race</h1>
+
+<ul>
+<li>What&#39;s wrong with our race variable?</li>
+</ul>
+
+<pre><code class="r">summary(stuatt$race_ethnicity)
+</code></pre>
+
+<pre><code>    A     B     H   M/O     W  NA&#39;s 
+ 7303 25321 30444  2809 20528  1129 
+</code></pre>
+
+<ul>
+<li>How do we do this?</li>
+</ul>
+
+<pre><code class="r">length(stuatt$race_ethnicity[is.na(stuatt$race_ethnicity)])
+stuatt$race_ethnicity[is.na(stuatt$race_ethnicity)] &lt;- &quot;AI&quot;
+summary(stuatt$race_ethnicity)
+</code></pre>
+
+<ul>
+<li>Why doesn&#39;t this work?</li>
+</ul>
+
+<h1>Correct conversion</h1>
+
+<pre><code class="r">length(stuatt$race_ethnicity[is.na(stuatt$race_ethnicity)])
+</code></pre>
+
+<pre><code>[1] 1129
+</code></pre>
+
+<pre><code class="r">stuatt$race_ethnicity &lt;- as.character(stuatt$race_ethnicity)
+stuatt$race_ethnicity[is.na(stuatt$race_ethnicity)] &lt;- &quot;AI&quot;
+stuatt$race_ethnicity &lt;- factor(stuatt$race_ethnicity)
+summary(stuatt$race_ethnicity)
+</code></pre>
+
+<pre><code>    A    AI     B     H   M/O     W 
+ 7303  1129 25321 30444  2809 20528 
+</code></pre>
+
+<ul>
+<li>Factors are pesky, even though they are useful and keep us from having to remember numeric representations of our data</li>
+<li>In fact, if you read the toolkit, this is a big drawback of <em>Stata</em> because you must constantly refer back to the numbers to remember what number corresponds to &ldquo;hispanic&rdquo;</li>
+</ul>
+
+<h1>Inconsistency Within Years</h1>
+
+<ul>
+<li>Let&#39;s consider student 3 in our dataset</li>
+</ul>
+
+<pre><code class="r">stuatt[7:9, c(&quot;sid&quot;, &quot;school_year&quot;, &quot;race_ethnicity&quot;)]
+</code></pre>
+
+<pre><code>  sid school_year race_ethnicity
+7   3        2006              H
+8   3        2006              B
+9   3        2007              B
+</code></pre>
+
+<ul>
+<li>How is this different from our prior problem?</li>
+<li>Since student 3 was recorded twice in the same year and given a different <em>race/ethnicity</em> we now have to figure out some rules for assigning a consistent value</li>
+</ul>
+
+<h1>Business Rule</h1>
+
+<ul>
+<li>Again, we are implementing a business rule which means we are making some arbitrary decisions about the data</li>
+<li>In this case, if a student is <em>hispanic</em> we will code both values as hispanic</li>
+<li>If the student is <em>not hispanic</em> in either observation, we will code the student as _multiple</li>
+</ul>
+
+<h1>Let&#39;s calculate the number of values per year</h1>
+
+<pre><code class="r">nvals &lt;- ddply(stuatt, .(sid, school_year), summarize, nvals_race = length(unique(race_ethnicity)), 
+    tmphispanic = length(which(race_ethnicity == &quot;H&quot;)))
+tempdf &lt;- merge(stuatt, nvals)
+# Clean up
+rm(nvals)
+# Recode race_ethnicity
+tempdf$race2 &lt;- tempdf$race_ethnicity
+tempdf$race2[tempdf$nvals_race &gt; 1 &amp; tempdf$tmphispanic == 1] &lt;- &quot;H&quot;
+tempdf$race2[tempdf$nvals_race &gt; 1 &amp; tempdf$tmphispanic != 1] &lt;- &quot;M/O&quot;
+tempdf$race_ethnicity &lt;- tempdf$race2
+
+# Clean up by removing old variables
+tempdf$race2 &lt;- NULL
+tempdf$nvals_race &lt;- NULL
+tempdf$tmphispanic &lt;- NULL
+# Resort our result
+tempdf &lt;- tempdf[order(tempdf$sid, tempdf$school_year), ]
+</code></pre>
+
+<h1>Compare them</h1>
+
+<pre><code>        sid school_year race_ethnicity
+56201     3        2006              H
+56202     3        2006              H
+81064  8552        2005              W
+81065  8552        2006            M/O
+81066  8552        2006            M/O
+6162  11382        2005              H
+6163  11382        2005              H
+6164  11382        2006              H
+</code></pre>
+
+<pre><code>        sid school_year race_ethnicity
+7         3        2006              H
+8         3        2006              B
+34290  8552        2005              W
+34291  8552        2006              A
+34292  8552        2006              W
+45674 11382        2005              H
+45675 11382        2005            M/O
+45676 11382        2006              H
+</code></pre>
+
+<h1>OK</h1>
+
+<ul>
+<li>Merge it back together</li>
+</ul>
+
+<pre><code class="r">stuatt &lt;- tempdf
+rm(tempdf)
+</code></pre>
+
+<h1>Break in Case of Emergency</h1>
+
+<pre><code class="r"># Stupid hack workaround of ddply bug when running too many of these
+# sequentially
+ddply_race &lt;- function(x, y, z) {
+    NewColName &lt;- &quot;race_ethnicity&quot;
+    z &lt;- ddply(x, .(y, z), .fun = function(xx, col) {
+        c(nvals_race = length(unique(xx[, col])))
+    }, NewColName)
+    z$sid &lt;- z$y
+    z$school_year &lt;- z$z
+    z$y &lt;- NULL
+    z$z &lt;- NULL
+    return(z)
+}
+
+nvals &lt;- ddply_race(stuatt, stuatt$sid, stuatt$school_year)
+tempdf &lt;- merge(stuatt, nvals)
+tempdf$temp_ishispanic &lt;- NA
+tempdf$temp_ishispanic[tempdf$race_ethnicity == &quot;H&quot; &amp; tempdf$nvals_race &gt; 1] &lt;- 1
+
+</code></pre>
+
+<h1>Inconsistency across years</h1>
+
+<ul>
+<li>So we are in the clear right?</li>
+<li>No, our data still has messiness across years:</li>
+</ul>
+
+<pre><code class="r">head(stuatt[, c(&quot;sid&quot;, &quot;school_year&quot;, &quot;race_ethnicity&quot;)])
+</code></pre>
+
+<pre><code>      sid school_year race_ethnicity
+1       1        2004              B
+2       1        2005              H
+3       1        2006              H
+4       1        2007              H
+44618   2        2006              W
+44619   2        2007              B
+</code></pre>
+
+<ul>
+<li>Student 1 and 2 are both listed as black and hispanic at alternate times</li>
+</ul>
+
+<h1>So&hellip;</h1>
+
+<h3>What do we do?</h3>
+
+<h3>Try it on your own</h3>
+
+<h3>Remember, this is tough stuff, so feel free to ask for help!</h3>
+
+<h1>Answer</h1>
+
+<pre><code class="r">tempdf &lt;- ddply(stuatt, .(sid), summarize, var_temp = statamode(race_ethnicity), 
+    nvals = length(unique(race_ethnicity)), most_recent_year = max(school_year), 
+    most_recent_var = tail(race_ethnicity, 1))
+
+tempdf$race2[tempdf$var_temp != &quot;.&quot;] &lt;- tempdf$var_temp[tempdf$var_temp != &quot;.&quot;]
+tempdf$race2[tempdf$var_temp == &quot;.&quot;] &lt;- paste(tempdf$most_recent_var[tempdf$var_temp == 
+    &quot;.&quot;])
+
+tempdf &lt;- merge(stuatt, tempdf)
+head(tempdf[, c(1, 2, 4, 14)], 7)
+</code></pre>
+
+<pre><code>  sid school_year race_ethnicity race2
+1   1        2004              B     H
+2   1        2005              H     H
+3   1        2006              H     H
+4   1        2007              H     H
+5   2        2006              W     B
+6   2        2007              B     B
+7   3        2006              H     H
+</code></pre>
+
+<ul>
+<li>Why do we have to do a paste command?</li>
+<li>What other parts of this code are important to remember?</li>
+<li>Always filter on both sides</li>
+<li>Always use <code>summarize</code> in the <code>ddply</code> call in this situation</li>
+</ul>
+
+<h1>A Faster Way</h1>
+
+<ul>
+<li>The nice thing about R is we can role processes together once we understand them</li>
+<li>Let&#39;s build a script to do this more efficiently</li>
+</ul>
+
+<pre><code class="r">task1 &lt;- function(df, id, year, var) {
+    require(plyr)
+    mdf &lt;- eval(parse(text = paste(&quot;ddply(&quot;, df, &quot;,.(&quot;, id, &quot;),summarize,\nvar_temp=statamode(&quot;, 
+        var, &quot;),\nnvals=length(unique(&quot;, var, &quot;)),most_recent_year=max(&quot;, year, 
+        &quot;),\nmost_recent_var=tail(&quot;, var, &quot;,1))&quot;, sep = &quot;&quot;)))
+    mdf$var2[mdf$var_temp != &quot;.&quot;] &lt;- mdf$var_temp[mdf$var_temp != &quot;.&quot;]
+    mdf$var2[mdf$var_temp == &quot;.&quot;] &lt;- as.character(mdf$most_recent_var[mdf$var_temp == 
+        &quot;.&quot;])
+    ndf &lt;- eval(parse(text = paste(&quot;merge(&quot;, df, &quot;,mdf)&quot;, sep = &quot;&quot;)))
+    rm(mdf)
+    return(ndf)
+}
+# Note data must be sorted
+tempdf &lt;- task1(stuatt, stuatt$sid, stuatt$school_year, stuatt$race_ethnicity)
+</code></pre>
+
+<h1>Other References</h1>
+
+<ul>
+<li><a href="http://www.gse.harvard.edu/%7Epfpie/index.php/sdp/tools">The Strategic Data Project Toolkit</a></li>
+<li><a href="http://www.ats.ucla.edu/stat/r/faq/default.htm">UCLA ATS: R FAQ on Data Management</a></li>
+<li><a href="http://www.twotorials.com/">Video Tutorials</a></li>
+<li><a href="http://www.jstatsoft.org/v40/i01">The Split-Apply-Combine Strategy for Data Analysis by Hadley Wickham</a> available in the Journal of Statistical Software vol 40, Issue 1, April 2011</li>
+</ul>
+
+<h1>Session Info</h1>
+
+<p>It is good to include the session info, e.g. this document is produced with <strong>knitr</strong> version 0.9.6. Here is my session info:</p>
+
+<pre><code class="r">print(sessionInfo(), locale = FALSE)
+</code></pre>
+
+<pre><code>R version 2.15.2 (2012-10-26)
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+
+attached base packages:
+[1] grid      stats     graphics  grDevices utils     datasets  methods  
+[8] base     
+
+other attached packages:
+ [1] sandwich_2.2-9  quantreg_4.94   SparseM_0.96    gridExtra_0.9.1
+ [5] mgcv_1.7-22     eeptools_0.1    mapproj_1.2-0   maps_2.3-0     
+ [9] proto_0.3-10    plyr_1.8        stringr_0.6.2   ggplot2_0.9.3  
+[13] lmtest_0.9-30   zoo_1.7-9       knitr_0.9.6    
+
+loaded via a namespace (and not attached):
+ [1] codetools_0.2-8    colorspace_1.2-0   dichromat_1.2-4   
+ [4] digest_0.6.0       evaluate_0.4.3     formatR_0.7       
+ [7] gtable_0.1.2       labeling_0.1       lattice_0.20-10   
+[10] MASS_7.3-22        Matrix_1.0-10      munsell_0.4       
+[13] nlme_3.1-106       RColorBrewer_1.0-5 reshape2_1.2.2    
+[16] scales_0.2.3       tools_2.15.2      
+</code></pre>
+
+<h1>Attribution and License</h1>
+
+<p xmlns:dct="http://purl.org/dc/terms/">
+<a rel="license" href="http://creativecommons.org/publicdomain/mark/1.0/">
+<img src="http://i.creativecommons.org/p/mark/1.0/88x31.png"
+     style="border-style: none;" alt="Public Domain Mark" />
+</a>
+<br />
+This work (<span property="dct:title">R Tutorial for Education</span>, by <a href="www.jaredknowles.com" rel="dct:creator"><span property="dct:title">Jared E. Knowles</span></a>), in service of the <a href="http://www.dpi.wi.gov" rel="dct:publisher"><span property="dct:title">Wisconsin Department of Public Instruction</span></a>, is free of known copyright restrictions.
+</p>
+
+</body>
+
+</html>

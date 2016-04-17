@@ -1,0 +1,30 @@
+work on SS SRS - test plan
+sign up page for administrator should be 
+
+merchant initiates the transaction and 
+
+assumption : merchant already has external user's details.
+
+
+
+tasks
+1. SRS
+2. Class diagram
+3. Test Plan
+
+How spring works
+How hibernate works
+Learning security techniques
+
+
+0. Database schema and design (Rajat & Gaurav & Bhardwaj)
+1. Hibernate (Indraneel & Qirui & Siddharth )
+2. MVC (Sai, Manu and Kenil)
+3. Security features - 2 : [Virutal keyboard (Rajat, Qirui), OTP (Bhardwaj, Sidharth), Captcha (Indraneel,  Gaurav), Database snapshot (Sai and Manu), Logging (Kenil)
+4. Funcionality featyres - 2 : Login [Rajat, Qirui] , Debit/Credit [Bhardwaj, Sidharth], Payment [Indraneel,  Gaurav], Administrator priviledges (authorization) [Sai and Manu, Kenil]
+5. Testing [Everybody]
+6. Vulnerability asessment. [Everybody]
+7. Documentation [Everybody]
+8. Creating unit test cases [Everybody]
+
+

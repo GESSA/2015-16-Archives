@@ -1,0 +1,23 @@
+import java.util.ArrayList;
+
+public class Calculator {
+
+	int input1, input2;
+	int output;
+	
+	
+	public void setInput(int a, int b) {
+		this.input = input;
+	}
+	public int getOutput() {
+		return output;
+	}
+	public void setOutput(int output) {
+		this.output = output;
+	}
+	
+	
+	
+	
+	
+}
